@@ -53,6 +53,30 @@ export const CASOS: Caso[] = [
       "Tienda abierta y recibiendo pedidos, con control total desde su celular.",
     area: "Desarrollo web",
   },
+  {
+    slug: "camaras-comercio",
+    titulo: "Cámaras que se ven desde el celular",
+    resumen: "Comercio con videovigilancia accesible en cualquier lugar.",
+    situacion:
+      "Un comercio de Olavarría necesitaba cuidar el local fuera de horario, pero no entendía la tecnología de cámaras.",
+    solucion:
+      "Asesoramos e instalamos cámaras con visión desde el celular, día y noche, con grabación de respaldo.",
+    resultado:
+      "El dueño mira su comercio desde donde está, con alertas y grabación disponible.",
+    area: "Seguridad y cámaras",
+  },
+  {
+    slug: "recuperacion-disco-familia",
+    titulo: "Fotos de familia recuperadas a tiempo",
+    resumen: "Disco que no arrancaba y recuerdos que volvieron.",
+    situacion:
+      "Un disco externo dejó de funcionar justo cuando una familia iba a hacer una presentación de fotos viejas.",
+    solucion:
+      "Trabajamos sobre copia del disco para no empeorar el daño y aplicamos recuperación con cuidado.",
+    resultado:
+      "Recuperamos las fotos y dejamos una copia de respaldo para que no se repita.",
+    area: "Servicio técnico",
+  },
 ];
 
 export function getCaso(slug: string): Caso | undefined {
