@@ -162,6 +162,28 @@ Relacionado con: Documento Maestro, Decisiones, Roadmap
   las vars `SMTP_USER`/`SMTP_PASS` (contraseña de app de Gmail) en Vercel, o se
   conecte Formspree. Pendiente de decisión del usuario.
 
+---
+
+## 2026-07-18 — Fase 3 y 5: Casos de éxito + Nosotros
+
+### /casos-de-exito (hub) + /casos-de-exito/[slug]
+- Página hub con 3 casos (cards: título + resumen).
+- 3 páginas SSG de detalle (situación → solución → resultado + CTA).
+- `lib/casos.ts`: datos de casos (slug, título, resumen, situación, solución,
+  resultado, área). Pilar 3 del Documento Maestro (Confianza).
+- Casos: pc-lenta-negocio, wifi-casa, tienda-online-emprendedor.
+
+### /nosotros
+- Propósito, cómo trabajamos (4 puntos), cobertura (Olavarría + remoto AR).
+- Cierra el link "Nosotros" del navbar.
+
+### Verificación
+- Build: 28 páginas. Producción HTTP 200: /casos-de-exito, /casos-de-exito/wifi-casa, /nosotros.
+- Commit `12d76b3`.
+
+### Estado de navegación principal
+- Inicio ✅ / Servicios ✅ / Casos de Éxito ✅ / Conocimiento ⏳ (Fase 4 SEO) / Nosotros ✅ / Contacto ✅
+
 ### Seguridad (recordatorio permanente)
 - `next@14.2.35` (parche crítico), `postcss@8.5.10` (override).
 - Queda 1 advisory "high" solo resoluble en `next@16` (breaking, NO aplicable a este sitio). Ver DECISIÓN #015.
