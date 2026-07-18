@@ -218,6 +218,37 @@ Relacionado con: Documento Maestro, Decisiones, Roadmap
   contactar pronto." en la misma página; el lead cae a soportedigital08@gmail.com.
 - Plan Formspree gratis (~50 envíos/mes). Subir plan si se necesita más volumen.
 
+---
+
+## 2026-07-18 — Contenido de valor ampliado
+
+### +3 artículos (Fase 4 / Conocimiento)
+- pc-virus-signos: "5 señales de que tu PC tiene un virus"
+- recuperar-archivos-borrados: "Borré un archivo por error: cómo recuperarlo"
+- correo-con-dominio: "Por qué tu negocio debería tener correo con su dominio"
+- Total: 6 artículos en /conocimiento.
+
+### +2 casos de éxito (Fase 3)
+- camaras-comercio: "Cámaras que se ven desde el celular" (Seguridad)
+- recuperacion-disco-familia: "Fotos de familia recuperadas a tiempo" (Servicio técnico)
+- Total: 5 casos en /casos-de-exito.
+
+### Verificación
+- Build: 36 páginas. Producción HTTP 200 confirmado para los 3 artículos y 2 casos nuevos.
+- Commit `b4108a9`.
+
+---
+
+## Nota: CRM Ippon Group (proyecto SEPARADO de Soporte Digital)
+- Sistema de Gestión web para "Ippon Group — Judo Olavarría", alojado en hosting propio
+  ippongroup.com.ar (usuario soportedigital@ipponggroup.com.ar).
+- Revisión 2026-07-18: frontend login con roles "Administrador" y "Socio" (email + password).
+- NO se pudo ingresar al panel con las credenciales provistas (soportedigital@ ni admin@).
+  Pendiente confirmar usuario/contraseña correctos para documentar funciones internas.
+- Observación: el mail del usuario dice dominio "ipponggroup.com.ar" (doble g) mientras la
+  web es "ippongroup.com.ar" (single g). Posible typo o subdominio distinto.
+- Este proyecto NO se versiona en el repo de Soporte Digital (son productos distintos).
+
 ### Seguridad (recordatorio permanente)
 - `next@14.2.35` (parche crítico), `postcss@8.5.10` (override).
 - Queda 1 advisory "high" solo resoluble en `next@16` (breaking, NO aplicable a este sitio). Ver DECISIÓN #015.
