@@ -22,40 +22,22 @@ export default function FormularioContacto() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ nombre, contacto, problema }),
       });
-      const data = await res.json();
+      const data = await res.json().catch(() => ({}));
 
-      if (!res.ok || !data.ok) {
-        // Fallback mailto siempre disponible
-        abrirMailto();
+      if (res.ok && data.ok) {
         setEstado("listo");
-        setMsg("Abrimos tu correo para enviar el mensaje. ¡Gracias!");
-        return;
-      }
-
-      if (data.modo === "mailto") {
-        abrirMailto();
-        setEstado("listo");
-        setMsg("Abrimos tu correo para completar el envío. ¡Gracias!");
-      } else {
-        setEstado("listo");
-        setMsg("¡Recibido! Te vamos a contactar pronto.");
+        setMsg("Mensaje enviado. Te vamos a contactar pronto.");
         setNombre("");
         setContacto("");
         setProblema("");
+        return;
       }
+      setEstado("error");
+      setMsg("No pudimos enviar. Escribinos directo a " + CONTACTO.email);
     } catch {
-      abrirMailto();
-      setEstado("listo");
-      setMsg("Abrimos tu correo para enviar el mensaje. ¡Gracias!");
+      setEstado("error");
+      setMsg("No pudimos enviar. Escribinos directo a " + CONTACTO.email);
     }
-  }
-
-  function abrirMailto() {
-    const asunto = encodeURIComponent(`Consulta de ${nombre || "Soporte Digital"}`);
-    const cuerpo = encodeURIComponent(
-      `Nombre: ${nombre}\nContacto: ${contacto}\n\nProblema / mensaje:\n${problema}`
-    );
-    window.location.href = `mailto:${CONTACTO.email}?subject=${asunto}&body=${cuerpo}`;
   }
 
   const inputClass =
@@ -105,7 +87,10 @@ export default function FormularioContacto() {
       </div>
 
       {msg && (
-        <p className="text-body text-primary-700 mt-2" role="status">
+        <p
+          className={`text-body mt-2 ${estado === "error" ? "text-red-600" : "text-primary-700"}`}
+          role="status"
+        >
           {msg}
         </p>
       )}

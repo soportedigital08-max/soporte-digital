@@ -187,3 +187,7 @@ export function getProblema(slug: string): Problema | undefined {
 export function getArea(slug: string): Area | undefined {
   return AREAS.find((a) => a.slug === slug);
 }
+
+export function getProblemasDeArea(areaSlug: string): Problema[] {
+  return PROBLEMAS.filter((p) => p.area === areaSlug);
+}

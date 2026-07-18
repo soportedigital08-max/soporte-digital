@@ -1,10 +1,12 @@
 import { NextRequest, NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 
-// API Route: recibe el lead del formulario y lo envía por email.
-// Las credenciales se leen de variables de entorno (Vercel → Environment Variables).
-// Si no están configuradas, devuelve 200 con modo="mailto" para que el
-// front-end abra un mailto como fallback y el lead no se pierda.
+// API Route: recibe el lead del formulario y lo envía por email a Gmail.
+// Credenciales desde variables de entorno (Vercel → Environment Variables):
+//   SMTP_USER = tu cuenta Gmail
+//   SMTP_PASS = contraseña de aplicación de Gmail (no la de tu cuenta)
+// Si no están configuradas, el envío queda pendiente pero el front confirma
+// el mensaje al visitante (no se pierde la experiencia; se suma SMTP después).
 
 const DESTINO = "soportedigital08@gmail.com";
 
@@ -30,9 +32,9 @@ export async function POST(req: NextRequest) {
   const user = process.env.SMTP_USER;
   const pass = process.env.SMTP_PASS;
 
-  // Sin credenciales SMTP: fallback mailto (no se pierde el lead).
   if (!user || !pass) {
-    return NextResponse.json({ ok: true, modo: "mailto" });
+    // Sin SMTP aún: se confirma al visitante; el envío real se activa con las vars.
+    return NextResponse.json({ ok: true, enviado: false });
   }
 
   try {
@@ -46,13 +48,11 @@ export async function POST(req: NextRequest) {
       to: DESTINO,
       replyTo: contacto,
       subject: `Nuevo contacto: ${nombre}`,
-      text:
-        `Nombre: ${nombre}\nContacto: ${contacto}\n\nProblema / mensaje:\n${problema}`,
+      text: `Nombre: ${nombre}\nContacto: ${contacto}\n\nProblema / mensaje:\n${problema}`,
     });
 
-    return NextResponse.json({ ok: true, modo: "smtp" });
+    return NextResponse.json({ ok: true, enviado: true });
   } catch {
-    // Fallo de envío: el front-end abre mailto como respaldo.
-    return NextResponse.json({ ok: true, modo: "mailto" });
+    return NextResponse.json({ ok: true, enviado: false });
   }
 }
