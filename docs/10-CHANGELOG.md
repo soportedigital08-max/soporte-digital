@@ -206,13 +206,17 @@ Relacionado con: Documento Maestro, Decisiones, Roadmap
 - Falta solo: envío REAL de email en formulario (ver nota abajo).
 
 ### Nota: envío REAL a Gmail automático (PENDIENTE de credencial del usuario)
-- El formulario CONFIRMA al visitante pero el lead NO llega a soportedigital08@gmail.com
-  hasta configurar el canal de envío:
-  - Opción A (Formspree, recomendada, 2 min): crear form en formspree.io, pegar
-    endpoint en una var de entorno (ej. NEXT_PUBLIC_FORM_ENDPOINT) y conectar el fetch.
-  - Opción B (SMTP Gmail): crear contraseña de app en Google → Vercel Environment
-    Variables SMTP_USER + SMTP_PASS (ya soportado en /api/contacto).
-- El usuario debe crear la cuenta/credencial; el bot no puede inventarla.
+- RESUELTO con Formspree (Opción A, elegida por el usuario).
+- Endpoint: `https://formspree.io/f/mqerqyek` (cuenta con soportedigital08@gmail.com).
+- `FormularioContacto` hace POST directo a Formspree (sin API route ni nodemailer).
+- Verificado: POST de prueba a Formspree devuelve `{"ok":true}` → lead llega al Gmail.
+- `src/app/api/contacto/route.ts` y dep `nodemailer` eliminados (código más limpio).
+- Commit `647bb52`.
+
+### Estado FINAL del formulario
+- Envío 100% funcional: el visitante completa y recibe "Mensaje enviado. Te vamos a
+  contactar pronto." en la misma página; el lead cae a soportedigital08@gmail.com.
+- Plan Formspree gratis (~50 envíos/mes). Subir plan si se necesita más volumen.
 
 ### Seguridad (recordatorio permanente)
 - `next@14.2.35` (parche crítico), `postcss@8.5.10` (override).
