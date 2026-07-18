@@ -2,7 +2,8 @@
 
 import { useState } from "react";
 import Button from "@/components/ui/Button";
-import { CONTACTO } from "@/lib/servicios";
+
+const FORM_ENDPOINT = "https://formspree.io/f/mqerqyek";
 
 export default function FormularioContacto() {
   const [nombre, setNombre] = useState("");
@@ -17,14 +18,18 @@ export default function FormularioContacto() {
     setMsg("");
 
     try {
-      const res = await fetch("/api/contacto", {
+      const res = await fetch(FORM_ENDPOINT, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ nombre, contacto, problema }),
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          nombre,
+          contacto,
+          problema,
+          _subject: `Nuevo contacto: ${nombre}`,
+        }),
       });
-      const data = await res.json().catch(() => ({}));
 
-      if (res.ok && data.ok) {
+      if (res.ok) {
         setEstado("listo");
         setMsg("Mensaje enviado. Te vamos a contactar pronto.");
         setNombre("");
@@ -33,10 +38,10 @@ export default function FormularioContacto() {
         return;
       }
       setEstado("error");
-      setMsg("No pudimos enviar. Escribinos directo a " + CONTACTO.email);
+      setMsg("No pudimos enviar. Probá de nuevo o escribinos por WhatsApp.");
     } catch {
       setEstado("error");
-      setMsg("No pudimos enviar. Escribinos directo a " + CONTACTO.email);
+      setMsg("No pudimos enviar. Probá de nuevo o escribinos por WhatsApp.");
     }
   }
 
