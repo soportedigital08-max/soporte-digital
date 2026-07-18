@@ -134,6 +134,34 @@ Relacionado con: Documento Maestro, Decisiones, Roadmap
 ### Nota de limpieza
 - `sd_check.css` y `src/components/files.zip` excluidos del repo y agregados a .gitignore.
 
+---
+
+## 2026-07-18 — Fix: 404 áreas + formulario sin popup mailto
+
+### Bug 1: 404 al entrar a un área (/servicios/soporte-tecnico, etc.)
+- Causa: las tarjetas de Área linkeaban a `/servicios/{area.slug}` pero esas rutas
+  no existían (solo las de Problema).
+- Solución: `/servicios/[slug]` ahora sirve Área O Problema según el slug
+  (una sola ruta dinámica; `generateStaticParams` ampliado a AREAS + PROBLEMAS).
+- `lib/servicios.ts`: agregado `getProblemasDeArea(areaSlug)`.
+- Verificado en vivo: /servicios/soporte-tecnico y /servicios/desarrollo-web → HTTP 200.
+
+### Bug 2: formulario abría cliente de correo (mailto)
+- Causa: sin SMTP configurado, el route devolvía `modo: mailto` y el front abría
+  el cliente de correo del visitante (popup molesto).
+- Solución: formulario hace POST y confirma "Mensaje enviado. Te vamos a contactar
+  pronto." en la misma página, sin salir. API route: si hay `SMTP_USER`/`SMTP_PASS`
+  envía por Gmail; si no, confirma igual (`enviado:false`) sin mailto.
+- Verificado: API devuelve `{"ok":true,"enviado":false}` (antes `modo: mailto`).
+
+### Commit
+- `fb178b4` fix: 404 en areas + formulario sin popup mailto.
+
+### Nota: envío REAL a Gmail automático
+- Hoy el formulario CONFIRMA pero no envía el email a menos que se configuren
+  las vars `SMTP_USER`/`SMTP_PASS` (contraseña de app de Gmail) en Vercel, o se
+  conecte Formspree. Pendiente de decisión del usuario.
+
 ### Seguridad (recordatorio permanente)
 - `next@14.2.35` (parche crítico), `postcss@8.5.10` (override).
 - Queda 1 advisory "high" solo resoluble en `next@16` (breaking, NO aplicable a este sitio). Ver DECISIÓN #015.
