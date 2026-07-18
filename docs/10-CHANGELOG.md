@@ -184,6 +184,36 @@ Relacionado con: Documento Maestro, Decisiones, Roadmap
 ### Estado de navegación principal
 - Inicio ✅ / Servicios ✅ / Casos de Éxito ✅ / Conocimiento ⏳ (Fase 4 SEO) / Nosotros ✅ / Contacto ✅
 
+---
+
+## 2026-07-18 — Fase 4: Conocimiento (contenido de valor / SEO)
+
+### /conocimiento (hub) + /conocimiento/[slug]
+- Página hub con 3 artículos (cards: título + extracto).
+- 3 páginas SSG de artículo (bloques h2/p/ul, categoría + lectura).
+- `lib/articulos.ts`: datos de artículos (slug, título, extracto, categoría, bloques).
+- Pilar 1 del Documento Maestro (Captación): atrae tráfico cualificado desde Google.
+- Artículos: pc-lenta-que-hacer, mejorar-wifi-casa, hosting-negocio.
+
+### Verificación
+- Build: 32 páginas. Producción HTTP 200: /conocimiento, /conocimiento/mejorar-wifi-casa, /conocimiento/hosting-negocio.
+- Commit `9294a95`.
+
+### Estado de navegación principal (FINAL)
+- Inicio ✅ / Servicios ✅ / Casos de Éxito ✅ / Conocimiento ✅ / Nosotros ✅ / Contacto ✅
+
+### Roadmap: FASES 1-5 COMPLETAS
+- Falta solo: envío REAL de email en formulario (ver nota abajo).
+
+### Nota: envío REAL a Gmail automático (PENDIENTE de credencial del usuario)
+- El formulario CONFIRMA al visitante pero el lead NO llega a soportedigital08@gmail.com
+  hasta configurar el canal de envío:
+  - Opción A (Formspree, recomendada, 2 min): crear form en formspree.io, pegar
+    endpoint en una var de entorno (ej. NEXT_PUBLIC_FORM_ENDPOINT) y conectar el fetch.
+  - Opción B (SMTP Gmail): crear contraseña de app en Google → Vercel Environment
+    Variables SMTP_USER + SMTP_PASS (ya soportado en /api/contacto).
+- El usuario debe crear la cuenta/credencial; el bot no puede inventarla.
+
 ### Seguridad (recordatorio permanente)
 - `next@14.2.35` (parche crítico), `postcss@8.5.10` (override).
 - Queda 1 advisory "high" solo resoluble en `next@16` (breaking, NO aplicable a este sitio). Ver DECISIÓN #015.
