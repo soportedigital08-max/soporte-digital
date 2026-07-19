@@ -14,16 +14,17 @@ export default function Hero() {
 
         <p className="text-body-lg text-gray-600 mt-6">
           PC lenta, WiFi que cae, archivos perdidos, sitio que no convierte.
-          Resolvemos problemas reales de tecnología en Olavarría y toda
-          Argentina, con diagnóstico claro y soluciones que perduran.
+          Y si tu negocio necesita <strong>un sistema o CRM a medida</strong>,
+          también lo desarrollamos. Resolvemos problemas reales de tecnología en
+          Olavarría y toda Argentina, con diagnóstico claro y soluciones que perduran.
         </p>
 
         <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
           <Button href="/contacto" variant="primary">
             Solicitar soporte
           </Button>
-          <Button href="/servicios" variant="secondary">
-            Ver soluciones
+          <Button href="/servicios/sistema-a-medida-crm" variant="secondary">
+            Desarrollar mi sistema
           </Button>
         </div>
       </div>

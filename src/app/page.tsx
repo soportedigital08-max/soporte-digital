@@ -4,6 +4,7 @@ import Hero from "@/components/sections/Hero";
 import Problemas from "@/components/sections/Problemas";
 import Confianza from "@/components/sections/Confianza";
 import Servicios from "@/components/sections/Servicios";
+import DesarrolloMedida from "@/components/sections/DesarrolloMedida";
 import CTA from "@/components/sections/CTA";
 
 export default function HomePage() {
@@ -15,6 +16,7 @@ export default function HomePage() {
         <Problemas />
         <Confianza />
         <Servicios />
+        <DesarrolloMedida />
         <CTA />
       </main>
       <Footer />

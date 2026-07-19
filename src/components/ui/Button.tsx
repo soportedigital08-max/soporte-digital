@@ -9,6 +9,7 @@ interface ButtonProps {
   variant?: ButtonVariant;
   type?: "button" | "submit";
   onClick?: () => void;
+  className?: string;
 }
 
 // Estilos según 04-DESIGN-SYSTEM.md — 2.1 Botones
@@ -27,19 +28,20 @@ export default function Button({
   variant = "primary",
   type = "button",
   onClick,
+  className = "",
 }: ButtonProps) {
-  const className = `${baseStyles} ${variantStyles[variant]}`;
+  const finalClass = `${baseStyles} ${variantStyles[variant]} ${className}`;
 
   if (href) {
     return (
-      <Link href={href} className={className}>
+      <Link href={href} className={finalClass}>
         {children}
       </Link>
     );
   }
 
   return (
-    <button type={type} onClick={onClick} className={className}>
+    <button type={type} onClick={onClick} className={finalClass}>
       {children}
     </button>
   );
