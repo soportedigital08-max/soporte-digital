@@ -14,7 +14,7 @@ export default function Card({ title, description, href, icon }: CardProps) {
   return (
     <Link
       href={href}
-      className="group flex flex-col bg-white border border-gray-100 rounded-card p-6 shadow-card hover:shadow-premium hover:border-primary-300 transition-all"
+      className="group flex flex-col bg-white border border-gray-100 rounded-card p-6 shadow-card hover:shadow-premium hover:border-primary-400 hover:-translate-y-1 transition-all"
     >
       {icon && (
         <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-card bg-primary-50 text-primary-700 group-hover:bg-primary-700 group-hover:text-white transition-colors">

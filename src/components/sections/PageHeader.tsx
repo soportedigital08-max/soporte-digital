@@ -9,7 +9,7 @@ export default function PageHeader({
   subtitle?: string;
 }) {
   return (
-    <section className="relative overflow-hidden bg-primary-900">
+    <section className="relative overflow-hidden bg-ink-900">
       <div className="absolute -top-24 -right-24 w-80 h-80 rounded-full bg-primary-600/30 blur-3xl" />
       <div
         className="absolute inset-0 opacity-[0.07]"

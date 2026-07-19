@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Space_Grotesk } from "next/font/google";
 import "./globals.css";
+import WhatsAppFloat from "@/components/ui/WhatsAppFloat";
 
 // Tipografía del Design System (04-DESIGN-SYSTEM.md §1.2):
 // Inter para cuerpo, Space Grotesk (display) para títulos -> look tech premium.
@@ -31,7 +32,10 @@ export default function RootLayout({
       lang="es"
       className={`${inter.variable} ${spaceGrotesk.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        {children}
+        <WhatsAppFloat />
+      </body>
     </html>
   );
 }
