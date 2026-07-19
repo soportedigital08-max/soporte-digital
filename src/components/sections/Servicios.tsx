@@ -1,10 +1,11 @@
 import Card from "@/components/ui/Card";
+import { ICONOS } from "@/components/ui/Iconos";
 import { AREAS } from "@/lib/servicios";
 
 // Resumen de áreas en la Home — Arquitectura §4 Nivel 2 + Documento Maestro §10
 export default function Servicios() {
   return (
-    <section className="py-24">
+    <section className="py-24 bg-surface">
       <div className="container">
         <h2 className="text-h2 text-gray-900 text-center">Nuestras soluciones</h2>
         <p className="text-body-lg text-gray-600 text-center mt-4 max-w-2xl mx-auto">
@@ -18,6 +19,7 @@ export default function Servicios() {
               title={area.titulo}
               description={area.descripcion}
               href={`/servicios/${area.slug}`}
+              icon={ICONOS[area.slug]}
             />
           ))}
         </div>

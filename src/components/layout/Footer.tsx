@@ -27,11 +27,11 @@ export default function Footer() {
           <div className="flex items-center gap-3">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/logo-sd.svg"
+              src="/logo-sd.png"
               alt="Soporte Digital"
               width={36}
-              height={40}
-              className="h-10 w-auto"
+              height={36}
+              className="h-9 w-auto"
             />
             <span className="text-h4 font-semibold text-white">
               Soporte Digital
