@@ -14,13 +14,13 @@ export default function ContactoPage() {
   return (
     <>
       <Navbar />
-      <main className="flex-1">
+      <main className="flex-1 bg-primary-900">
         <section className="py-24">
           <div className="container max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16">
             {/* Izquierda: copy + datos */}
             <div>
-              <h1 className="text-h1 text-gray-900">Hablemos</h1>
-              <p className="text-body-lg text-gray-600 mt-6">
+              <h1 className="text-h1 text-white">Hablemos</h1>
+              <p className="text-body-lg text-primary-200 mt-6">
                 Contanos qué pasa. Te respondemos con claridad y sin
                 vueltas.
               </p>
@@ -40,15 +40,15 @@ export default function ContactoPage() {
                 >
                   WhatsApp: +54 9 2284 520392
                 </a>
-                <span className="text-body text-gray-600">
+                <span className="text-body text-primary-200">
                   {CONTACTO.ubicacion}
                 </span>
               </div>
             </div>
 
             {/* Derecha: formulario */}
-            <div className="bg-surface border border-gray-200 rounded-card p-8">
-              <h2 className="text-h3 text-gray-900 mb-6">
+            <div className="bg-primary-800/40 border border-gray-200 rounded-card p-8">
+              <h2 className="text-h3 text-white mb-6">
                 Dejanos tu consulta
               </h2>
               <FormularioContacto />

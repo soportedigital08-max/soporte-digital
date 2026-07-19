@@ -1,7 +1,7 @@
 // Sección de estadísticas de confianza — aporta capa visual y credibilidad.
 const STATS = [
   { valor: "500+", label: "Equipos reparados" },
-  { valor: "10 años", label: "de experiencia" },
+  { valor: "20 años", label: "de experiencia" },
   { valor: "100%", label: "Olavarría y Argentina" },
   { valor: "24/7", label: "Soporte remoto" },
 ];

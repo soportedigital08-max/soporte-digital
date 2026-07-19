@@ -41,18 +41,18 @@ export default function ServicioSlugPage({ params }: { params: { slug: string } 
     return (
       <>
         <Navbar />
-        <main className="flex-1">
-          <section className="py-24 bg-surface">
+        <main className="flex-1 bg-primary-900">
+          <section className="py-24 bg-primary-800/40">
             <div className="container max-w-3xl mx-auto text-center">
               <p className="text-small text-primary-700 uppercase tracking-wide">Área</p>
-              <h1 className="text-h1 text-gray-900 mt-2">{area.titulo}</h1>
-              <p className="text-body-lg text-gray-600 mt-6">{area.descripcion}</p>
+              <h1 className="text-h1 text-white mt-2">{area.titulo}</h1>
+              <p className="text-body-lg text-primary-200 mt-6">{area.descripcion}</p>
             </div>
           </section>
 
           <section className="py-24">
             <div className="container">
-              <h2 className="text-h2 text-gray-900 text-center">
+              <h2 className="text-h2 text-white text-center">
                 Problemas que resolvemos en esta área
               </h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-12">
@@ -68,9 +68,9 @@ export default function ServicioSlugPage({ params }: { params: { slug: string } 
             </div>
           </section>
 
-          <section className="py-24 text-center bg-surface">
+          <section className="py-24 text-center bg-primary-800/40">
             <div className="container">
-              <h2 className="text-h2 text-gray-900">¿Tenés otro problema?</h2>
+              <h2 className="text-h2 text-white">¿Tenés otro problema?</h2>
               <div className="mt-8">
                 <Button href="/contacto" variant="primary">Solicitar soporte</Button>
               </div>
@@ -86,14 +86,14 @@ export default function ServicioSlugPage({ params }: { params: { slug: string } 
   return (
     <>
       <Navbar />
-      <main className="flex-1">
-        <section className="py-24 bg-surface">
+      <main className="flex-1 bg-primary-900">
+        <section className="py-24 bg-primary-800/40">
           <div className="container max-w-3xl mx-auto text-center">
             <p className="text-small text-primary-700 uppercase tracking-wide">
               {getArea(problema!.area)?.titulo}
             </p>
-            <h1 className="text-h1 text-gray-900 mt-2">{problema!.titulo}</h1>
-            <p className="text-body-lg text-gray-600 mt-6">{problema!.situacion}</p>
+            <h1 className="text-h1 text-white mt-2">{problema!.titulo}</h1>
+            <p className="text-body-lg text-primary-200 mt-6">{problema!.situacion}</p>
             <div className="mt-8">
               <Button href="/contacto" variant="primary">Lo resolvemos</Button>
             </div>
@@ -103,8 +103,8 @@ export default function ServicioSlugPage({ params }: { params: { slug: string } 
         <section className="py-24">
           <div className="container max-w-3xl flex flex-col gap-12">
             <div>
-              <h2 className="text-h2 text-gray-900">Qué hacemos</h2>
-              <p className="text-body-lg text-gray-600 mt-4">{problema!.solucion}</p>
+              <h2 className="text-h2 text-white">Qué hacemos</h2>
+              <p className="text-body-lg text-primary-200 mt-4">{problema!.solucion}</p>
             </div>
             <div className="bg-primary-900 text-white rounded-card p-8">
               <h3 className="text-h3">Resultado</h3>
@@ -115,10 +115,10 @@ export default function ServicioSlugPage({ params }: { params: { slug: string } 
 
         <FAQ faqs={problema!.faqs} />
 
-        <section className="py-24 text-center bg-surface">
+        <section className="py-24 text-center bg-primary-800/40">
           <div className="container">
-            <h2 className="text-h2 text-gray-900">¿Lo pasás?</h2>
-            <p className="text-body-lg text-gray-600 mt-4">Escribinos y lo arreglamos.</p>
+            <h2 className="text-h2 text-white">¿Lo pasás?</h2>
+            <p className="text-body-lg text-primary-200 mt-4">Escribinos y lo arreglamos.</p>
             <div className="mt-8">
               <Button href="/contacto" variant="primary">Solicitar soporte</Button>
             </div>

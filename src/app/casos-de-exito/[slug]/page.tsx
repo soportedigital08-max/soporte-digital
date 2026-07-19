@@ -22,24 +22,24 @@ export default function CasoPage({ params }: { params: { slug: string } }) {
   return (
     <>
       <Navbar />
-      <main className="flex-1">
-        <section className="py-24 bg-surface">
+      <main className="flex-1 bg-primary-900">
+        <section className="py-24 bg-primary-800/40">
           <div className="container max-w-3xl mx-auto text-center">
             <p className="text-small text-primary-700 uppercase tracking-wide">{caso.area}</p>
-            <h1 className="text-h1 text-gray-900 mt-2">{caso.titulo}</h1>
-            <p className="text-body-lg text-gray-600 mt-6">{caso.resumen}</p>
+            <h1 className="text-h1 text-white mt-2">{caso.titulo}</h1>
+            <p className="text-body-lg text-primary-200 mt-6">{caso.resumen}</p>
           </div>
         </section>
 
         <section className="py-24">
           <div className="container max-w-3xl flex flex-col gap-12">
             <div>
-              <h2 className="text-h2 text-gray-900">La situación</h2>
-              <p className="text-body-lg text-gray-600 mt-4">{caso.situacion}</p>
+              <h2 className="text-h2 text-white">La situación</h2>
+              <p className="text-body-lg text-primary-200 mt-4">{caso.situacion}</p>
             </div>
             <div>
-              <h2 className="text-h2 text-gray-900">Lo que hicimos</h2>
-              <p className="text-body-lg text-gray-600 mt-4">{caso.solucion}</p>
+              <h2 className="text-h2 text-white">Lo que hicimos</h2>
+              <p className="text-body-lg text-primary-200 mt-4">{caso.solucion}</p>
             </div>
             <div className="bg-primary-900 text-white rounded-card p-8">
               <h3 className="text-h3">Resultado</h3>
@@ -48,9 +48,9 @@ export default function CasoPage({ params }: { params: { slug: string } }) {
           </div>
         </section>
 
-        <section className="py-24 text-center bg-surface">
+        <section className="py-24 text-center bg-primary-800/40">
           <div className="container">
-            <h2 className="text-h2 text-gray-900">¿Tu caso es parecido?</h2>
+            <h2 className="text-h2 text-white">¿Tu caso es parecido?</h2>
             <div className="mt-8">
               <Button href="/contacto" variant="primary">Solicitar soporte</Button>
             </div>

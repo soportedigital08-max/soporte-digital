@@ -3,6 +3,7 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import Card from "@/components/ui/Card";
 import Button from "@/components/ui/Button";
+import PageHeader from "@/components/sections/PageHeader";
 import { CASOS } from "@/lib/casos";
 
 export const metadata: Metadata = {
@@ -15,15 +16,11 @@ export default function CasosPage() {
   return (
     <>
       <Navbar />
-      <main className="flex-1">
-        <section className="py-24 bg-surface text-center">
-          <div className="container max-w-3xl mx-auto">
-            <h1 className="text-h1 text-gray-900">Casos de éxito</h1>
-            <p className="text-body-lg text-gray-600 mt-6">
-              Problemas reales, resueltos de verdad. Así trabajamos.
-            </p>
-          </div>
-        </section>
+      <main className="flex-1 bg-primary-900">
+        <PageHeader
+          title="Casos de éxito"
+          subtitle="Problemas reales, resueltos de verdad. Así trabajamos."
+        />
 
         <section className="py-24">
           <div className="container grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
@@ -38,9 +35,9 @@ export default function CasosPage() {
           </div>
         </section>
 
-        <section className="py-24 text-center bg-surface">
+        <section className="py-24 text-center bg-primary-800/40">
           <div className="container">
-            <h2 className="text-h2 text-gray-900">El próximo caso puede ser el tuyo</h2>
+            <h2 className="text-h2 text-white">El próximo caso puede ser el tuyo</h2>
             <div className="mt-8">
               <Button href="/contacto" variant="primary">Solicitar soporte</Button>
             </div>
