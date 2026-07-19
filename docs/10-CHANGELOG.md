@@ -337,6 +337,34 @@ Relacionado con: Documento Maestro, Decisiones, Roadmap
 ### Nota
 - next/font descarga fuentes en build (requiere red). Sin bloqueo en Vercel.
 
+---
+
+## 2026-07-19 — Vuelta de rosca: cohesión dark + 20 años + EES N°7
+
+### Corrección de antigüedad
+- Stats: "10 años" -> "20 años de experiencia" (dato confirmado por el usuario).
+- Refuerzo como diferenciador en Nosotros.
+
+### EES N°7 (secundaria7.com.ar)
+- El usuario SOLO aloja y asesora el sitio; el desarrollo es de la escuela.
+- Por eso NO es caso de éxito de desarrollo (estilo Ippon). Se menciona en la
+  trayectoria de Nosotros como proyecto alojado/asesorado, con datos reales del
+  sitio (FM 104.5 Identidad, archivo histórico, depto de prensa).
+- Investigado vía navegador: EES N°7 "Fortín de las Puntas del Tapalquén", Desde 1990,
+  multimedio con radio en vivo. Noticias 2026 sobre periodismo, memoria, ferias.
+
+### Cohesión dark (punto 2 pendiente)
+- Nuevo PageHeader.tsx: encabezado azul profundo + grilla tech (reusa estética Hero).
+- Servicios/Casos/Conocimiento usan PageHeader.
+- Todas las páginas interiores: bg-surface -> bg-primary-800/40, textos grises ->
+  claros (white/primary-200/300). main envuelto en bg-primary-900.
+- body background -> primary-900 (sin destellos blancos entre secciones).
+- privacidad: text-gray-500/700 -> primary claros.
+- Build 42 rutas. Verificado visual: fondo azul cohesivo, legibilidad OK, "20 años".
+
+### Validación visual
+- vision: "fondo azul cohesivo, buena legibilidad, 20 años como headline, cohesión 8/10".
+
 ### Seguridad (recordatorio permanente)
 - `next@14.2.35` (parche crítico), `postcss@8.5.10` (override).
 - Queda 1 advisory "high" solo resoluble en `next@16` (breaking, NO aplicable a este sitio). Ver DECISIÓN #015.
