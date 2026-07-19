@@ -1,0 +1,56 @@
+<svg width="120" height="132" viewBox="0 0 120 132" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Soporte Digital">
+  <defs>
+    <linearGradient id="sdGrad" x1="14" y1="16" x2="106" y2="116" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0E7490"/>
+      <stop offset="1" stop-color="#22D3EE"/>
+    </linearGradient>
+  </defs>
+  <!-- Hexágono con esquinas redondeadas (flat top/bottom) -->
+  <path d="M60 4
+           C66 4 71.5 4 78 5
+           L104 20
+           C109 23 112 28 112 34
+           L112 98
+           C112 104 109 109 104 112
+           L78 127
+           C71.5 128 66 128 60 128
+           C54 128 48.5 128 42 127
+           L16 112
+           C11 109 8 104 8 98
+           L8 34
+           C8 28 11 23 16 20
+           L42 5
+           C48.5 4 54 4 60 4 Z"
+        fill="url(#sdGrad)"/>
+  <!-- SD en navy, espacio negativo (recortado) mediante mask -->
+  <mask id="sdMask">
+    <rect width="120" height="132" fill="white"/>
+    <g fill="black" font-family="Arial, Helvetica, sans-serif" font-weight="900">
+      <!-- S -->
+      <path d="M50 50
+               L34 50
+               L34 58
+               L47 58
+               L47 66
+               L34 66
+               L34 90
+               L50 90
+               L50 82
+               L37 82
+               L37 74
+               L50 74 Z"/>
+      <!-- D -->
+      <path d="M58 50
+               L70 50
+               C80 50 86 56 86 66
+               C86 76 80 82 70 82
+               L58 82 Z
+               M62 56
+               L70 56
+               C76 56 80 60 80 66
+               C80 72 76 76 70 76
+               L62 76 Z"/>
+    </g>
+  </mask>
+  <path d="M0 0 H120 V132 H0 Z" fill="#0F172A" mask="url(#sdMask)" opacity="0.92"/>
+</svg>

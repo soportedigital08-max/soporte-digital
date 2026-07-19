@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 // Reutiliza los mismos items de navegación principal como navegación secundaria
 // (03-ARQUITECTURA.md 8. NAVEGACIÓN)
@@ -20,14 +21,25 @@ const CONTACTO = {
 
 export default function Footer() {
   return (
-    <footer className="bg-surface border-t border-gray-200">
+    <footer className="bg-primary-900 text-primary-100">
       <div className="container py-12 flex flex-col md:flex-row md:justify-between gap-8">
         {/* Marca */}
         <div>
-          <span className="text-h4 font-medium text-primary-900">
-            Soporte Digital
-          </span>
-          <p className="text-small text-gray-500 mt-2">{CONTACTO.ubicacion}</p>
+          <div className="flex items-center gap-3">
+            <Image
+              src="/logo-sd.svg"
+              alt="Soporte Digital"
+              width={34}
+              height={38}
+            />
+            <span className="text-h4 font-semibold text-white">
+              Soporte Digital
+            </span>
+          </div>
+          <p className="text-small text-primary-200 mt-3 max-w-xs">
+            Tecnología que funciona. Soluciones que perduran.
+          </p>
+          <p className="text-small text-primary-200 mt-2">{CONTACTO.ubicacion}</p>
         </div>
 
         {/* Navegación secundaria */}
@@ -36,27 +48,30 @@ export default function Footer() {
             <Link
               key={item.href}
               href={item.href}
-              className="text-body text-gray-700 hover:text-primary-700 transition-colors"
+              className="text-body text-primary-100 hover:text-white transition-colors"
             >
               {item.label}
             </Link>
           ))}
+          <Link
+            href="/privacidad"
+            className="text-body text-primary-200 hover:text-white transition-colors"
+          >
+            Política de Privacidad
+          </Link>
         </nav>
 
         {/* Contacto */}
-        <div className="flex flex-col gap-2 text-body text-gray-700">
-          <span className="font-medium text-gray-900">Contacto</span>
-          <a
-            href={`mailto:${CONTACTO.email}`}
-            className="hover:text-primary-700"
-          >
+        <div className="flex flex-col gap-2 text-body text-primary-100">
+          <span className="font-medium text-white">Contacto</span>
+          <a href={`mailto:${CONTACTO.email}`} className="hover:text-white">
             {CONTACTO.email}
           </a>
           <a
             href={`https://wa.me/${CONTACTO.whatsapp}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-primary-700"
+            className="hover:text-white"
           >
             WhatsApp: +54 9 2284 520392
           </a>
@@ -64,10 +79,9 @@ export default function Footer() {
       </div>
 
       {/* Cierre */}
-      <div className="border-t border-gray-200">
-        <div className="container py-6 text-small text-gray-500">
-          © {new Date().getFullYear()} Soporte Digital — Tecnología que funciona.
-          Soluciones que perduran.
+      <div className="border-t border-primary-800">
+        <div className="container py-6 text-small text-primary-200">
+          © {new Date().getFullYear()} Soporte Digital — Todos los derechos reservados.
         </div>
       </div>
     </footer>

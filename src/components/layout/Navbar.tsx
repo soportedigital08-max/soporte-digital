@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import Button from "@/components/ui/Button";
 
 // Navegación principal — 03-ARQUITECTURA.md 8. NAVEGACIÓN
@@ -13,13 +14,22 @@ const NAV_ITEMS = [
 
 export default function Navbar() {
   return (
-    <header className="sticky top-0 z-50 bg-background border-b border-gray-200">
-      <div className="container flex items-center justify-between py-4">
-        <Link href="/" className="text-h4 font-medium text-primary-900">
-          Soporte Digital
+    <header className="sticky top-0 z-50 bg-white/80 backdrop-blur border-b border-gray-100 shadow-sm">
+      <div className="container flex items-center justify-between py-3">
+        <Link href="/" className="flex items-center gap-3 group">
+          <Image
+            src="/logo-sd.svg"
+            alt="Soporte Digital"
+            width={34}
+            height={38}
+            priority
+          />
+          <span className="text-h4 font-semibold text-primary-900 group-hover:text-primary-700 transition-colors">
+            Soporte Digital
+          </span>
         </Link>
 
-        <nav className="hidden md:flex items-center gap-6">
+        <nav className="hidden md:flex items-center gap-7">
           {NAV_ITEMS.map((item) => (
             <Link
               key={item.href}
