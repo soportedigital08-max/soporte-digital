@@ -4,6 +4,7 @@ import Hero from "@/components/sections/Hero";
 import Problemas from "@/components/sections/Problemas";
 import Confianza from "@/components/sections/Confianza";
 import Stats from "@/components/sections/Stats";
+import Stack from "@/components/sections/Stack";
 import Servicios from "@/components/sections/Servicios";
 import DesarrolloMedida from "@/components/sections/DesarrolloMedida";
 import CTA from "@/components/sections/CTA";
@@ -17,6 +18,7 @@ export default function HomePage() {
         <Problemas />
         <Confianza />
         <Stats />
+        <Stack />
         <Servicios />
         <DesarrolloMedida />
         <CTA />
