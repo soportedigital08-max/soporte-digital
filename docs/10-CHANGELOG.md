@@ -308,6 +308,35 @@ Relacionado con: Documento Maestro, Decisiones, Roadmap
 - Fuentes libres (Unsplash, hotlink permitido). Si se cae el CDN, reemplazar por Pixabay/Pexels.
   No requieren atribución para uso web según licencia Unsplash.
 
+---
+
+## 2026-07-19 — Combo premium 1+3+4+5 (sofisticación)
+
+### Tipografía display (5)
+- layout.tsx: next/font con Inter (cuerpo, --font-inter) + Space Grotesk (display, --font-display).
+- globals.css: .text-h1..h4 usan font-family: var(--font-display) -> jerarquia tipografica tech.
+
+### Navbar sticky + blur (4)
+- Ya estaba: header sticky top-0 z-50 bg-white/80 backdrop-blur. El blur se nota al hacer scroll
+  sobre secciones claras (arriba del todo se funde con el hero azul, comportamiento correcto).
+
+### Scroll reveal (1)
+- globals.css: utilidad .reveal (opacity/translateY + transition) + .is-visible; respeta
+  prefers-reduced-motion.
+- components/ui/Reveal.tsx: cliente con IntersectionObserver; envuelve secciones de la Home.
+
+### Terminal animada (3)
+- components/sections/Terminal.tsx: cliente con efecto de tipeo linea por linea
+  (scan --equipo pc-01 ... fix --optimizar --red), cursor parpadeante. Reemplaza el <pre> estatico.
+- Hero usa <Terminal/> dentro de <Reveal>.
+
+### Validación visual
+- Build 42 rutas. vision confirma: titulos display geometricos, terminal tech como acierto visual,
+  look "premium y profesional, no plantilla genérica, con personalidad propia".
+
+### Nota
+- next/font descarga fuentes en build (requiere red). Sin bloqueo en Vercel.
+
 ### Seguridad (recordatorio permanente)
 - `next@14.2.35` (parche crítico), `postcss@8.5.10` (override).
 - Queda 1 advisory "high" solo resoluble en `next@16` (breaking, NO aplicable a este sitio). Ver DECISIÓN #015.
