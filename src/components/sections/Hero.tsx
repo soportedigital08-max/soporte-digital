@@ -1,65 +1,75 @@
 import Button from "@/components/ui/Button";
 
-// Hero — Decisión #014: claridad concreta. Rediseño premium con imagen real.
+// Hero — estética TECH PREMIUM (opción A): azul profundo + glassmorphism +
+// panel de código como elemento visual (no foto de stock). Sin texto invisible.
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-primary-800 via-primary-700 to-primary-600">
-      {/* Patrón de puntos sutil */}
+    <section className="relative overflow-hidden bg-primary-900">
+      {/* Aurora de gradientes */}
+      <div className="absolute -top-32 -left-24 w-[34rem] h-[34rem] rounded-full bg-primary-600/30 blur-3xl" />
+      <div className="absolute -bottom-32 -right-24 w-[34rem] h-[34rem] rounded-full bg-primary-400/20 blur-3xl" />
+      {/* Grilla técnica sutil */}
       <div
-        className="absolute inset-0 opacity-20"
+        className="absolute inset-0 opacity-[0.07]"
         style={{
           backgroundImage:
-            "radial-gradient(rgba(255,255,255,0.4) 1px, transparent 1px)",
-          backgroundSize: "22px 22px",
+            "linear-gradient(rgba(255,255,255,0.6) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.6) 1px, transparent 1px)",
+          backgroundSize: "40px 40px",
         }}
       />
-      <div className="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-primary-400/20 blur-3xl" />
-      <div className="absolute -bottom-32 -left-24 w-96 h-96 rounded-full bg-primary-900/20 blur-3xl" />
 
-      <div className="container relative grid md:grid-cols-2 gap-10 items-center py-24">
+      <div className="container relative grid lg:grid-cols-2 gap-12 items-center py-24">
         <div>
-          <span className="inline-block text-sm font-semibold tracking-wide text-primary-100 uppercase">
+          <span className="inline-flex items-center gap-2 rounded-full border border-primary-400/40 bg-primary-800/40 px-3 py-1 text-small font-medium text-primary-100">
+            <span className="h-2 w-2 rounded-full bg-primary-300" />
             Soporte técnico & Desarrollo a medida
           </span>
-          <h1 className="text-h1 text-white font-bold mt-3">
+
+          <h1 className="text-h1 text-white font-extrabold mt-5 leading-[1.05]">
             Tu tecnología no funciona.
-            <br />
-            Nosotros la arreglamos.
+            <span className="block text-primary-300">Nosotros la arreglamos.</span>
           </h1>
 
-          <p className="text-body-lg text-primary-100 mt-5">
+          <p className="text-body-lg text-primary-100 mt-5 max-w-xl">
             PC lenta, WiFi que cae, archivos perdidos, sitio que no convierte.
             Y si tu negocio necesita <strong>un sistema o CRM a medida</strong>,
-            también lo desarrollamos. Resolvemos problemas reales de tecnología en
-            Olavarría y toda Argentina.
+            también lo desarrollamos. Tecnología real, en Olavarría y toda Argentina.
           </p>
 
           <div className="mt-8 flex flex-col sm:flex-row gap-4">
-            <Button
-              href="/contacto"
-              variant="primary"
-              className="bg-white text-primary-800 hover:bg-primary-50"
-            >
+            <Button href="/contacto" variant="primary">
               Solicitar soporte
             </Button>
             <Button
               href="/servicios/sistema-a-medida-crm"
               variant="secondary"
-              className="border-2 border-white bg-white text-primary-800 font-semibold hover:bg-primary-50"
+              className="border border-white bg-white text-primary-800 font-semibold hover:bg-primary-50"
             >
               Desarrollar mi sistema
             </Button>
           </div>
         </div>
 
+        {/* Panel de código glassmorphism (visual tech, no stock photo) */}
         <div className="relative">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="/images/hero-tech.jpg"
-            alt="Soporte tecnológico profesional"
-            className="rounded-card shadow-premium w-full object-cover h-72 md:h-80"
-          />
-          <div className="absolute inset-0 rounded-card ring-1 ring-white/20" />
+          <div className="rounded-card border border-white/10 bg-white/5 p-5 shadow-premium backdrop-blur-md">
+            <div className="flex items-center gap-2 mb-4">
+              <span className="h-3 w-3 rounded-full bg-red-400" />
+              <span className="h-3 w-3 rounded-full bg-yellow-400" />
+              <span className="h-3 w-3 rounded-full bg-green-400" />
+              <span className="ml-2 text-small text-primary-200">soporte-digital ~ diagnóstico</span>
+            </div>
+            <pre className="text-small leading-relaxed text-primary-100 font-mono overflow-x-auto">
+<span className="text-primary-300">$</span> scan --equipo pc-01{'\n'}
+<span className="text-green-300">✓</span> CPU ok · RAM 16GB{'\n'}
+<span className="text-green-300">✓</span> disco SSD 512GB{'\n'}
+<span className="text-yellow-300">!</span> 14 procesos innecesarios{'\n'}
+<span className="text-yellow-300">!</span> WiFi: señal 62% (punto muerto){'\n'}
+<span className="text-primary-300">$</span> fix --optimizar --red{'\n'}
+<span className="text-green-300">✓</span> equipo optimizado en 18 min
+            </pre>
+          </div>
+          <div className="absolute -z-10 -bottom-6 -right-6 h-40 w-40 rounded-card bg-primary-500/20 blur-2xl" />
         </div>
       </div>
     </section>
