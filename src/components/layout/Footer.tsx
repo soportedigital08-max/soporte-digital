@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 
 // Reutiliza los mismos items de navegación principal como navegación secundaria
 // (03-ARQUITECTURA.md 8. NAVEGACIÓN)
@@ -26,11 +25,13 @@ export default function Footer() {
         {/* Marca */}
         <div>
           <div className="flex items-center gap-3">
-            <Image
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
               src="/logo-sd.svg"
               alt="Soporte Digital"
-              width={34}
-              height={38}
+              width={36}
+              height={40}
+              className="h-10 w-auto"
             />
             <span className="text-h4 font-semibold text-white">
               Soporte Digital

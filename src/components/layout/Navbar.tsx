@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 import Button from "@/components/ui/Button";
 
 // Navegación principal — 03-ARQUITECTURA.md 8. NAVEGACIÓN
@@ -17,12 +16,13 @@ export default function Navbar() {
     <header className="sticky top-0 z-50 bg-white/80 backdrop-blur border-b border-gray-100 shadow-sm">
       <div className="container flex items-center justify-between py-3">
         <Link href="/" className="flex items-center gap-3 group">
-          <Image
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
             src="/logo-sd.svg"
             alt="Soporte Digital"
-            width={34}
-            height={38}
-            priority
+            width={36}
+            height={40}
+            className="h-10 w-auto"
           />
           <span className="text-h4 font-semibold text-primary-900 group-hover:text-primary-700 transition-colors">
             Soporte Digital
