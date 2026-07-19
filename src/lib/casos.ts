@@ -77,6 +77,18 @@ export const CASOS: Caso[] = [
       "Recuperamos las fotos y dejamos una copia de respaldo para que no se repita.",
     area: "Servicio técnico",
   },
+  {
+    slug: "crm-ippon-group",
+    titulo: "CRM de gestión para un Dojo de Judo",
+    resumen: "Sistema web propio: socios, pagos y asistencia en un solo lugar.",
+    situacion:
+      "Un dojo de artes marciales de Olavarría anotaba socios, cobros y asistencia en planillas sueltas. Perdían seguimiento de pagos y nadie sabía qué clases tenía cada alumno.",
+    solucion:
+      "Desarrollamos un sistema web a medida: alta de socios con planes, registro de pagos (efectivo, transferencia y Mercado Pago), control de asistencia, gestión de clases y un portal donde el alumno reserva y paga online.",
+    resultado:
+      "El dojo tiene su CRM propio: cobros bajo control, asistencia registrada y los socios gestionando sus clases desde el celular. Todo en su dominio.",
+    area: "Desarrollo web",
+  },
 ];
 
 export function getCaso(slug: string): Caso | undefined {

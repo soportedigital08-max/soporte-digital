@@ -134,6 +134,22 @@ export const PROBLEMAS: Problema[] = [
     ],
   },
   {
+    slug: "sistema-a-medida-crm",
+    titulo: "Necesito un sistema o CRM a medida",
+    situacion:
+      "Tu negocio maneja socios, turnos, stock o cobros en planillas sueltas y perdés tiempo y control. Necesitás algo hecho a tu medida, no un software genérico que no entiende tu rubro.",
+    solucion:
+      "Desarrollamos un sistema web a tu medida: altas, pagos (incluido Mercado Pago), seguimiento y un portal para tus clientes. Como el CRM de gestión que hicimos para un dojo de judo de Olavarría (socios, cobros y asistencia en un solo lugar).",
+    resultado:
+      "Tenés tu sistema propio, en tu dominio, con tus datos bajo control y tus clientes gestionando desde el celular.",
+    area: "desarrollo-web",
+    faqs: [
+      { pregunta: "¿Pueden conectar Mercado Pago?", respuesta: "Sí. Integramos cobros online para que tus clientes paguen desde su panel." },
+      { pregunta: "¿Mis datos quedan en mi dominio?", respuesta: "Sí, el sistema es tuyo y los datos se alojan donde vos decidas." },
+      { pregunta: "¿Hay un ejemplo real?", respuesta: "Sí: desarrollamos el CRM del dojo Ippon Group en ippongroup.com.ar. Lo mostramos en Casos de Éxito." },
+    ],
+  },
+  {
     slug: "correo-empresarial",
     titulo: "Necesito correo empresarial",
     situacion:
