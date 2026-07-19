@@ -1,7 +1,9 @@
 import Button from "@/components/ui/Button";
+import Reveal from "@/components/ui/Reveal";
+import Terminal from "@/components/sections/Terminal";
 
 // Hero — estética TECH PREMIUM (opción A): azul profundo + glassmorphism +
-// panel de código como elemento visual (no foto de stock). Sin texto invisible.
+// terminal animada (efecto tipeo) como elemento visual. Sin foto de stock.
 export default function Hero() {
   return (
     <section className="relative overflow-hidden bg-primary-900">
@@ -50,27 +52,10 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Panel de código glassmorphism (visual tech, no stock photo) */}
-        <div className="relative">
-          <div className="rounded-card border border-white/10 bg-white/5 p-5 shadow-premium backdrop-blur-md">
-            <div className="flex items-center gap-2 mb-4">
-              <span className="h-3 w-3 rounded-full bg-red-400" />
-              <span className="h-3 w-3 rounded-full bg-yellow-400" />
-              <span className="h-3 w-3 rounded-full bg-green-400" />
-              <span className="ml-2 text-small text-primary-200">soporte-digital ~ diagnóstico</span>
-            </div>
-            <pre className="text-small leading-relaxed text-primary-100 font-mono overflow-x-auto">
-<span className="text-primary-300">$</span> scan --equipo pc-01{'\n'}
-<span className="text-green-300">✓</span> CPU ok · RAM 16GB{'\n'}
-<span className="text-green-300">✓</span> disco SSD 512GB{'\n'}
-<span className="text-yellow-300">!</span> 14 procesos innecesarios{'\n'}
-<span className="text-yellow-300">!</span> WiFi: señal 62% (punto muerto){'\n'}
-<span className="text-primary-300">$</span> fix --optimizar --red{'\n'}
-<span className="text-green-300">✓</span> equipo optimizado en 18 min
-            </pre>
-          </div>
+        <Reveal className="relative">
+          <Terminal />
           <div className="absolute -z-10 -bottom-6 -right-6 h-40 w-40 rounded-card bg-primary-500/20 blur-2xl" />
-        </div>
+        </Reveal>
       </div>
     </section>
   );
