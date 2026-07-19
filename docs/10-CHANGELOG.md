@@ -239,7 +239,7 @@ Relacionado con: Documento Maestro, Decisiones, Roadmap
 
 ---
 
-## Nota: CRM Ippon Group (proyecto SEPARADO de Soporte Digital)
+### Nota: CRM Ippon Group (proyecto SEPARADO de Soporte Digital)
 - Sistema de Gestión web para "Ippon Group — Judo Olavarría", alojado en hosting propio
   ippongroup.com.ar (usuario soportedigital@ipponggroup.com.ar).
 - Revisión 2026-07-18: frontend login con roles "Administrador" y "Socio" (email + password).
@@ -248,6 +248,36 @@ Relacionado con: Documento Maestro, Decisiones, Roadmap
 - Observación: el mail del usuario dice dominio "ipponggroup.com.ar" (doble g) mientras la
   web es "ippongroup.com.ar" (single g). Posible typo o subdominio distinto.
 - Este proyecto NO se versiona en el repo de Soporte Digital (son productos distintos).
+
+---
+
+## 2026-07-18 (tarde) — CRM en sitio + Home + Privacidad/SEO + Rediseño premium
+
+### CRM visible en el sitio
+- /casos-de-exito/crm-ippon-group (caso real: Dojo de Judo, socios/pagos/asistencia)
+- /servicios/sistema-a-medida-crm (nuevo problema en desarrollo-web)
+- Hero menciona "desarrollamos sistemas/CRM"; banda "Desarrollo a medida" en Home enlaza ambos.
+
+### Home + legales + SEO
+- Hero + sección DesarrolloMedida (caso Ippon destacado en portada).
+- /privacidad (Política de Privacidad, obligatoria por MP + datos de contacto).
+- app/sitemap.ts + app/robots.ts (SEO, indexación de las 41 rutas).
+- Button acepta className.
+
+### Rediseño premium (marca SD)
+- Logo recreado como SVG transparente: public/logo-sd.svg (hexágono + SD, degradado teal→celeste).
+- Navbar y Footer con logo + paleta azul corporativa (primary-900 footer, blur navbar).
+- Hero con gradiente azul (from-primary-800 via-primary-700 to-primary-600) + CTAs blancos.
+- Card con sombra premium (shadow-card / shadow-premium).
+- globals.css: jerarquía tipográfica (h1-h4, body, small) + paleta primary completa + utilidades
+  de gradiente (from/via/to) definidas manualmente (proyecto sin tailwind.config; se usan
+  utilidades propias en @layer components).
+- Commit `f227286`. Build 41 páginas. Verificado visualmente en producción (hero azul, logo SD).
+
+### Nota de arquitectura
+- El proyecto NO tiene tailwind.config.ts; las clases de marca (primary-*, text-h*, rounded-*,
+  gradientes) se definen como utilidades propias en globals.css @layer components. Mantener ahí
+  cualquier nueva clase de marca.
 
 ### Seguridad (recordatorio permanente)
 - `next@14.2.35` (parche crítico), `postcss@8.5.10` (override).
