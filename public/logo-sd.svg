@@ -1,6 +1,6 @@
 <svg width="120" height="132" viewBox="0 0 120 132" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Soporte Digital">
   <defs>
-    <linearGradient id="sdGrad" x1="14" y1="16" x2="106" y2="116" gradientUnits="userSpaceOnUse">
+    <linearGradient id="sdGrad" x1="14" y1="14" x2="106" y2="118" gradientUnits="userSpaceOnUse">
       <stop offset="0" stop-color="#0E7490"/>
       <stop offset="1" stop-color="#22D3EE"/>
     </linearGradient>
@@ -22,35 +22,46 @@
            L42 5
            C48.5 4 54 4 60 4 Z"
         fill="url(#sdGrad)"/>
-  <!-- SD en navy, espacio negativo (recortado) mediante mask -->
-  <mask id="sdMask">
-    <rect width="120" height="132" fill="white"/>
-    <g fill="black" font-family="Arial, Helvetica, sans-serif" font-weight="900">
-      <!-- S -->
-      <path d="M50 50
-               L34 50
-               L34 58
-               L47 58
-               L47 66
-               L34 66
-               L34 90
-               L50 90
-               L50 82
-               L37 82
-               L37 74
-               L50 74 Z"/>
-      <!-- D -->
-      <path d="M58 50
-               L70 50
-               C80 50 86 56 86 66
-               C86 76 80 82 70 82
-               L58 82 Z
-               M62 56
-               L70 56
-               C76 56 80 60 80 66
-               C80 72 76 76 70 76
-               L62 76 Z"/>
-    </g>
-  </mask>
-  <path d="M0 0 H120 V132 H0 Z" fill="#0F172A" mask="url(#sdMask)" opacity="0.92"/>
+  <!-- SD en navy sólido, forma fiel al original -->
+  <g fill="#0F172A">
+    <!-- S: curva superior + curva inferior (bloque sólido) -->
+    <path d="M52 44
+             C52 40 49 37 43 37
+             L33 37
+             C27 37 25 40 25 44
+             L25 50
+             C25 53 27 55 31 55
+             L46 55
+             C50 55 52 57 52 61
+             L52 67
+             C52 71 50 73 46 73
+             L31 73
+             C27 73 25 71 25 67
+             L25 61
+             L20 61
+             L20 67
+             C20 74 25 79 33 79
+             L46 79
+             C54 79 60 74 60 66
+             L60 50
+             C60 43 57 38 50 37
+             L43 37
+             C40 37 38 39 38 42
+             L38 48
+             L43 48
+             L43 44
+             Z"/>
+    <!-- D -->
+    <path d="M66 37
+             L78 37
+             C90 37 98 45 98 61
+             C98 77 90 85 78 85
+             L66 85
+             L66 79
+             L76 79
+             C85 79 90 73 90 61
+             C90 49 85 43 76 43
+             L66 43
+             Z"/>
+  </g>
 </svg>

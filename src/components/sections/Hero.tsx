@@ -34,7 +34,7 @@ export default function Hero() {
           <Button
             href="/servicios/sistema-a-medida-crm"
             variant="secondary"
-            className="border-white text-white hover:bg-white/10"
+            className="border-white bg-white/10 text-white hover:bg-white hover:text-primary-800"
           >
             Desarrollar mi sistema
           </Button>
