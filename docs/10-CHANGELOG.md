@@ -365,6 +365,43 @@ Relacionado con: Documento Maestro, Decisiones, Roadmap
 ### Validación visual
 - vision: "fondo azul cohesivo, buena legibilidad, 20 años como headline, cohesión 8/10".
 
+---
+
+## 2026-07-19 — Fase 1 premium (propuesta rediseño)
+
+### Base dark #0B0F14 (punto 1 de la propuesta)
+- globals: --color-ink-900 #0B0F14, --color-ink-800 #12161C, --color-surface #fafaf9.
+- body background -> ink-900 (casi negro). Hero y PageHeader -> bg-ink-900.
+- Stats -> bg-ink-800 (ritmo diferenciado). Footer mantiene primary-900 (azul).
+- Utilidades bg-ink-900 / bg-ink-800 agregadas.
+
+### Counter-up en Stats
+- Counter.tsx: cuenta 0->end con easeOutCubic al entrar en viewport (IntersectionObserver).
+- Stats usan Counter para 500+/20/100%; "24/7" estatico. Tipografia mono tabular.
+
+### Logos reales de tecnología (grayscale -> color)
+- public/tech/: 9 logos de Simple Icons (linux, apple, react, nextdotjs, typescript,
+  nodedotjs, postgresql, mercadopago, cpanel) + 3 propios (windows, wifi, cameraipp).
+- Stack.tsx: grid de 12 isotipos en grayscale, hover a color + scale. Reemplaza pills de texto.
+
+### WhatsApp flotante
+- WhatsAppFloat.tsx: boton verde fijo abajo-derecha con ping de pulso. En layout (todas las paginas).
+
+### Microinteracciones
+- Hero: fade-up escalonado (Reveal con delay) + linea de confianza ("20 años · 500+...").
+- Card: hover -translate-y-1 + border-primary-400 (elevación).
+
+### Validación visual
+- Build 42 rutas. vision: "fondo casi-negro tech profundo, WhatsApp flotante OK, mas premium".
+- Los 12 logos de tecnología presentes en HTML (Stack).
+
+### Pendiente Fase 2
+- Capturas reales del CRM Ippon (dashboard/portal/pago/mobile) con datos difuminados,
+  integradas en Desarrollo a medida + case study card. Requiere acceso admin (autorizado
+  por el usuario con matiz de difuminar datos sensibles antes de publicar).
+- Footer: agregar horario de atencion y zona de cobertura (texto mapa simple).
+*** End Patch
+
 ### Seguridad (recordatorio permanente)
 - `next@14.2.35` (parche crítico), `postcss@8.5.10` (override).
 - Queda 1 advisory "high" solo resoluble en `next@16` (breaking, NO aplicable a este sitio). Ver DECISIÓN #015.
