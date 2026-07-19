@@ -279,6 +279,35 @@ Relacionado con: Documento Maestro, Decisiones, Roadmap
   gradientes) se definen como utilidades propias en globals.css @layer components. Mantener ahí
   cualquier nueva clase de marca.
 
+---
+
+## 2026-07-19 — Logo oficial PNG + favicon + salto visual premium
+
+### Logo oficial
+- Confirmado por el usuario: usa el logo `logo-sin-fondo-soporte-digital.png` (hexágono degradado
+  azul + SD, transparente). Copiado a public/logo-sd.png y reemplazó el SVG recreado.
+- Verificado con PIL: modo RGBA, alpha=0 en esquinas -> transparente real.
+- Navbar y Footer usan /logo-sd.png (img nativo). SVG viejo borrado.
+
+### Favicon
+- app/icon.png = copia del logo (Next lo sirve como favicon automático).
+- IMPORTANTE: el icon debe ir en src/app/icon.png, NO en app/icon.png (raíz). Si se pone en la
+  raíz, Next ignora src/app y el build solo genera 3 rutas (icon + 404) -> home 404 en producción.
+  Commit f5b4f51 corrigió esto.
+
+### Salto visual premium (Home)
+- Hero: 2 columnas con imagen real (Unsplash, públic/images/hero-tech.jpg), patrón de puntos,
+  halo decorativo, botón secundario robusto (blanco sólido + texto oscuro, legible siempre).
+- Card: acepta `icon` (ReactNode); Servicios muestra íconos SVG inline (Iconos.tsx).
+- Nueva sección Stats (franja primary-900 con 500+/10 años/100%/24-7).
+- Imágenes libres en public/images (hero-tech.jpg, soporte-pc.jpg, oficina.jpg).
+- Build 42 rutas. Verificado visualmente en producción (vision): logo SD azul, hero con foto,
+  íconos en servicios, stats, botón legible.
+
+### Nota imágenes
+- Fuentes libres (Unsplash, hotlink permitido). Si se cae el CDN, reemplazar por Pixabay/Pexels.
+  No requieren atribución para uso web según licencia Unsplash.
+
 ### Seguridad (recordatorio permanente)
 - `next@14.2.35` (parche crítico), `postcss@8.5.10` (override).
 - Queda 1 advisory "high" solo resoluble en `next@16` (breaking, NO aplicable a este sitio). Ver DECISIÓN #015.
