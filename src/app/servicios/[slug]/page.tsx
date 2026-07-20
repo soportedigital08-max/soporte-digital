@@ -4,8 +4,9 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import Button from "@/components/ui/Button";
 import Card from "@/components/ui/Card";
-import PageHeader from "@/components/sections/PageHeader";
 import FAQ from "@/components/sections/FAQ";
+import PageHeader from "@/components/sections/PageHeader";
+import Reveal from "@/components/ui/Reveal";
 import {
   AREAS,
   PROBLEMAS,
@@ -52,13 +53,14 @@ export default function ServicioSlugPage({ params }: { params: { slug: string } 
               </h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-12">
                 {problemas.map((p) => (
-                  <Card
-                    key={p.slug}
-                    title={p.titulo}
-                    description={p.situacion}
-                    href={`/servicios/${p.slug}`}
-                    variant="dark"
-                  />
+                  <Reveal key={p.slug}>
+                    <Card
+                      title={p.titulo}
+                      description={p.situacion}
+                      href={`/servicios/${p.slug}`}
+                      variant="dark"
+                    />
+                  </Reveal>
                 ))}
               </div>
             </div>

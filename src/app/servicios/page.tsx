@@ -4,6 +4,7 @@ import Footer from "@/components/layout/Footer";
 import Card from "@/components/ui/Card";
 import Button from "@/components/ui/Button";
 import PageHeader from "@/components/sections/PageHeader";
+import Reveal from "@/components/ui/Reveal";
 import { AREAS, PROBLEMAS } from "@/lib/servicios";
 
 export const metadata: Metadata = {
@@ -28,12 +29,14 @@ export default function ServiciosPage() {
             <h2 className="text-h2 text-white text-center">Áreas</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-12">
               {AREAS.map((area) => (
-                <Card
-                  key={area.slug}
-                  title={area.titulo}
-                  description={area.descripcion}
-                  href={`/servicios/${area.slug}`}
-                />
+                <Reveal key={area.slug}>
+                  <Card
+                    title={area.titulo}
+                    description={area.descripcion}
+                    href={`/servicios/${area.slug}`}
+                    variant="dark"
+                  />
+                </Reveal>
               ))}
             </div>
           </div>
@@ -47,12 +50,14 @@ export default function ServiciosPage() {
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-12">
               {PROBLEMAS.map((p) => (
-                <Card
-                  key={p.slug}
-                  title={p.titulo}
-                  description={p.situacion}
-                  href={`/servicios/${p.slug}`}
-                />
+                <Reveal key={p.slug}>
+                  <Card
+                    title={p.titulo}
+                    description={p.situacion}
+                    href={`/servicios/${p.slug}`}
+                    variant="dark"
+                  />
+                </Reveal>
               ))}
             </div>
           </div>

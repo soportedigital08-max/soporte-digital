@@ -4,6 +4,7 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import Button from "@/components/ui/Button";
 import PageHeader from "@/components/sections/PageHeader";
+import Reveal from "@/components/ui/Reveal";
 import { CASOS, getCaso } from "@/lib/casos";
 
 export function generateStaticParams() {
@@ -28,18 +29,24 @@ export default function CasoPage({ params }: { params: { slug: string } }) {
 
         <section className="py-24">
           <div className="container max-w-3xl flex flex-col gap-12">
-            <div>
-              <h2 className="text-h2 text-white">La situación</h2>
-              <p className="text-body-lg text-primary-100 mt-4">{caso.situacion}</p>
-            </div>
-            <div>
-              <h2 className="text-h2 text-white">Lo que hicimos</h2>
-              <p className="text-body-lg text-primary-100 mt-4">{caso.solucion}</p>
-            </div>
-            <div className="bg-ink-800 border border-white/10 text-white rounded-card p-8">
-              <h3 className="text-h3">Resultado</h3>
-              <p className="text-body-lg text-primary-100 mt-3">{caso.resultado}</p>
-            </div>
+            <Reveal>
+              <div>
+                <h2 className="text-h2 text-white">La situación</h2>
+                <p className="text-body-lg text-primary-100 mt-4">{caso.situacion}</p>
+              </div>
+            </Reveal>
+            <Reveal>
+              <div>
+                <h2 className="text-h2 text-white">Lo que hicimos</h2>
+                <p className="text-body-lg text-primary-100 mt-4">{caso.solucion}</p>
+              </div>
+            </Reveal>
+            <Reveal>
+              <div className="bg-ink-800 border border-white/10 text-white rounded-card p-8">
+                <h3 className="text-h3">Resultado</h3>
+                <p className="text-body-lg text-primary-100 mt-3">{caso.resultado}</p>
+              </div>
+            </Reveal>
           </div>
         </section>
 

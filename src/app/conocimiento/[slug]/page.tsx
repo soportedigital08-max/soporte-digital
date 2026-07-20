@@ -4,6 +4,7 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import Button from "@/components/ui/Button";
 import PageHeader from "@/components/sections/PageHeader";
+import Reveal from "@/components/ui/Reveal";
 import { ARTICULOS, getArticulo } from "@/lib/articulos";
 
 export function generateStaticParams() {
@@ -32,18 +33,20 @@ export default function ArticuloPage({ params }: { params: { slug: string } }) {
 
         <article className="py-24">
           <div className="container max-w-3xl mx-auto">
-            <div className="flex flex-col gap-6">
-              {articulo.bloques.map((b, i) => {
-                if (b.tipo === "h2") return <h2 key={i} className="text-h2 text-white mt-4">{b.texto}</h2>;
-                if (b.tipo === "ul")
-                  return (
-                    <ul key={i} className="text-body-lg text-primary-100 list-disc list-inside flex flex-col gap-2">
-                      {b.items.map((it, j) => <li key={j}>{it}</li>)}
-                    </ul>
-                  );
-                return <p key={i} className="text-body-lg text-primary-100">{b.texto}</p>;
-              })}
-            </div>
+            <Reveal>
+              <div className="flex flex-col gap-6">
+                {articulo.bloques.map((b, i) => {
+                  if (b.tipo === "h2") return <h2 key={i} className="text-h2 text-white mt-4">{b.texto}</h2>;
+                  if (b.tipo === "ul")
+                    return (
+                      <ul key={i} className="text-body-lg text-primary-100 list-disc list-inside flex flex-col gap-2">
+                        {b.items.map((it, j) => <li key={j}>{it}</li>)}
+                      </ul>
+                    );
+                  return <p key={i} className="text-body-lg text-primary-100">{b.texto}</p>;
+                })}
+              </div>
+            </Reveal>
           </div>
         </article>
 

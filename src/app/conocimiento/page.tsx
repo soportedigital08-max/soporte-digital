@@ -4,6 +4,7 @@ import Footer from "@/components/layout/Footer";
 import Card from "@/components/ui/Card";
 import Button from "@/components/ui/Button";
 import PageHeader from "@/components/sections/PageHeader";
+import Reveal from "@/components/ui/Reveal";
 import { ARTICULOS } from "@/lib/articulos";
 
 export const metadata: Metadata = {
@@ -25,12 +26,14 @@ export default function ConocimientoPage() {
         <section className="py-24">
           <div className="container grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
             {ARTICULOS.map((a) => (
-              <Card
-                key={a.slug}
-                title={a.titulo}
-                description={a.extracto}
-                href={`/conocimiento/${a.slug}`}
-              />
+              <Reveal key={a.slug}>
+                <Card
+                  title={a.titulo}
+                  description={a.extracto}
+                  href={`/conocimiento/${a.slug}`}
+                  variant="dark"
+                />
+              </Reveal>
             ))}
           </div>
         </section>

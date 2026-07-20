@@ -4,6 +4,7 @@ import Footer from "@/components/layout/Footer";
 import Card from "@/components/ui/Card";
 import Button from "@/components/ui/Button";
 import PageHeader from "@/components/sections/PageHeader";
+import Reveal from "@/components/ui/Reveal";
 import { CASOS } from "@/lib/casos";
 
 export const metadata: Metadata = {
@@ -25,12 +26,14 @@ export default function CasosPage() {
         <section className="py-24">
           <div className="container grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
             {CASOS.map((caso) => (
-              <Card
-                key={caso.slug}
-                title={caso.titulo}
-                description={caso.resumen}
-                href={`/casos-de-exito/${caso.slug}`}
-              />
+              <Reveal key={caso.slug}>
+                <Card
+                  title={caso.titulo}
+                  description={caso.resumen}
+                  href={`/casos-de-exito/${caso.slug}`}
+                  variant="dark"
+                />
+              </Reveal>
             ))}
           </div>
         </section>

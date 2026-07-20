@@ -70,15 +70,15 @@ export default function NosotrosPage() {
               <h2 className="text-h2 text-white">20 años de trayectoria</h2>
               <div className="mt-6 flex flex-col gap-6">
                 {HITOS.map((h) => (
-                  <div
-                    key={h.año}
-                    className="border-l-2 border-primary-500 pl-5"
-                  >
-                    <div className="text-h4 text-primary-300">{h.año}</div>
-                    <p className="text-body-lg text-primary-200 mt-1">
-                      {h.texto}
-                    </p>
-                  </div>
+                  <Reveal key={h.año}>
+                    <div className="relative border-l-2 border-primary-500 pl-5">
+                      <span className="absolute -left-[7px] top-1.5 h-3 w-3 rounded-full bg-primary-500" />
+                      <div className="text-h4 text-primary-300">{h.año}</div>
+                      <p className="text-body-lg text-primary-200 mt-1">
+                        {h.texto}
+                      </p>
+                    </div>
+                  </Reveal>
                 ))}
               </div>
             </Reveal>
