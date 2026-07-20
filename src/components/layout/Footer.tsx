@@ -16,12 +16,15 @@ const CONTACTO = {
   email: "soportedigital08@gmail.com",
   whatsapp: "5492284520392", // +54 9 2284 520392
   ubicacion: "Olavarría, Buenos Aires — Argentina",
+  // Horario: placeholder hasta confirmar dato real de negocio.
+  horario: "Lun a Sáb · 9:00–20:00 (horario a confirmar)",
+  cobertura: "Olavarría y alrededores + soporte remoto en toda Argentina",
 };
 
 export default function Footer() {
   return (
-    <footer className="bg-primary-900 text-primary-100">
-      <div className="container py-12 flex flex-col md:flex-row md:justify-between gap-8">
+    <footer className="bg-ink-900 text-primary-100">
+      <div className="container py-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
         {/* Marca */}
         <div>
           <div className="flex items-center gap-3">
@@ -77,12 +80,23 @@ export default function Footer() {
             WhatsApp: +54 9 2284 520392
           </a>
         </div>
+
+        {/* Horario y cobertura */}
+        <div className="flex flex-col gap-2 text-body text-primary-100">
+          <span className="font-medium text-white">Horario</span>
+          <span className="text-small text-primary-200">{CONTACTO.horario}</span>
+          <span className="font-medium text-white mt-2">Cobertura</span>
+          <span className="text-small text-primary-200">
+            {CONTACTO.cobertura}
+          </span>
+        </div>
       </div>
 
       {/* Cierre */}
-      <div className="border-t border-primary-800">
+      <div className="border-t border-primary-900">
         <div className="container py-6 text-small text-primary-200">
-          © {new Date().getFullYear()} Soporte Digital — Todos los derechos reservados.
+          © {new Date().getFullYear()} Soporte Digital — Todos los derechos
+          reservados.
         </div>
       </div>
     </footer>

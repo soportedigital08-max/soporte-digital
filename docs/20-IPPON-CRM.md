@@ -97,3 +97,26 @@ Accesible desde "Ver como socio". El alumno ve:
 
 - La contraseña de admin fue compartida por chat. **Recomendado rotarla** tras esta revisión.
 - El dominio del usuario provisto originalmente traía doble "g" (ipponggroup.com.ar); el correcto es ippongroup.com.ar (una g). Verificar que no haya cuentas duplicadas.
+
+---
+
+## 7. DECISIÓN FIJA — Evidencia visual en el sitio de Soporte Digital
+
+Acordado 2026-07-19 (prioridad: percepción premium, sin exponer datos reales del cliente):
+
+- **Panel ADMIN (Ippon Group):** se muestra como **mockup recreado con datos 100% ficticios**.
+  Mismo look/estilo real del sistema (barra lateral, secciones, Mercado Pago), pero
+  **cero datos ni estructura reales expuestos** (no se usan capturas del admin real, no se
+  muestran nombres, montos ni planes reales del cliente).
+- **Portal del CLIENTE final (socio):** se usa **captura real anonimizada**, solo con
+  **consentimiento** del cliente. Toda información identificable debe difuminarse/borrarse
+  antes de publicar. Si no hay consentimiento explícito o anonimización verificable, NO se
+  publica captura del portal real; se usa mockup.
+- **Origen de las imágenes:** `public/ippon/` — mockups propios (SVG/HTML) recreados, no
+  capturas de producción con datos vivos.
+- Esta decisión prevalece sobre cualquier otro criterio de "mostrar el sistema real".
+
+### Estado de implementación
+- [x] Decisión registrada.
+- [x] Mockup del panel admin recreado (datos ficticios) en Desarrollo a medida.
+- [ ] Captura real del portal socio: pendiente de consentimiento + anonimización.

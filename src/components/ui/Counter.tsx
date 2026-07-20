@@ -3,7 +3,8 @@
 import { useEffect, useRef, useState } from "react";
 
 // Cuenta desde 0 hasta `end` cuando entra en viewport (counter-up).
-// Muestra prefijo/sufijo fijos (ej. "+", "%", " años").
+// Mejora progresiva: el HTML ya trae el valor FINAL (SSR/sin-JS) y aria-label
+// accesible; el efecto solo anima desde 0 como realce visual.
 export default function Counter({
   end,
   prefix = "",
@@ -16,7 +17,8 @@ export default function Counter({
   duration?: number;
 }) {
   const ref = useRef<HTMLSpanElement>(null);
-  const [value, setValue] = useState(0);
+  // Valor inicial = final (SSR / fallback sin JS).
+  const [value, setValue] = useState(end);
   const started = useRef(false);
 
   useEffect(() => {
@@ -26,11 +28,11 @@ export default function Counter({
       (entries) => {
         if (entries[0].isIntersecting && !started.current) {
           started.current = true;
+          setValue(0); // arranca la animación desde 0
           const start = performance.now();
           const tick = (now: number) => {
             const p = Math.min((now - start) / duration, 1);
-            // easeOutCubic
-            const eased = 1 - Math.pow(1 - p, 3);
+            const eased = 1 - Math.pow(1 - p, 3); // easeOutCubic
             setValue(Math.round(eased * end));
             if (p < 1) requestAnimationFrame(tick);
           };
@@ -43,8 +45,9 @@ export default function Counter({
     return () => obs.disconnect();
   }, [end, duration]);
 
+  const readable = `${prefix}${end}${suffix}`;
   return (
-    <span ref={ref}>
+    <span ref={ref} aria-label={readable}>
       {prefix}
       {value}
       {suffix}
