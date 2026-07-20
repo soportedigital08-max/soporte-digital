@@ -1,12 +1,17 @@
 import Reveal from "@/components/ui/Reveal";
+import type { ReactNode } from "react";
 
 // Encabezado de página interior — cohesión dark con el Hero (azul profundo + grilla tech).
 export default function PageHeader({
   title,
   subtitle,
+  eyebrow,
+  children,
 }: {
   title: string;
   subtitle?: string;
+  eyebrow?: string;
+  children?: ReactNode;
 }) {
   return (
     <section className="relative overflow-hidden bg-ink-900">
@@ -21,12 +26,18 @@ export default function PageHeader({
       />
       <div className="container relative py-24 text-center max-w-3xl mx-auto">
         <Reveal>
+          {eyebrow && (
+            <p className="text-small text-primary-300 uppercase tracking-wide mb-3">
+              {eyebrow}
+            </p>
+          )}
           <h1 className="text-h1 text-white font-extrabold leading-[1.05]">
             {title}
           </h1>
           {subtitle && (
             <p className="text-body-lg text-primary-100 mt-6">{subtitle}</p>
           )}
+          {children}
         </Reveal>
       </div>
     </section>

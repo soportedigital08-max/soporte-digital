@@ -38,7 +38,7 @@ export default function NosotrosPage() {
   return (
     <>
       <Navbar />
-      <main className="flex-1 bg-primary-900">
+      <main className="flex-1 bg-ink-900">
         <PageHeader
           title="20 años resolviendo tecnología"
           subtitle="No vendemos productos. Eliminamos la fricción tecnológica de personas y empresas en Olavarría y toda Argentina."
@@ -92,7 +92,7 @@ export default function NosotrosPage() {
           </div>
         </section>
 
-        <section className="py-24 text-center bg-primary-800/40">
+        <section className="py-24 text-center bg-ink-800">
           <div className="container">
             <h2 className="text-h2 text-white">Hablemos</h2>
             <div className="mt-8">

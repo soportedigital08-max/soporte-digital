@@ -16,7 +16,7 @@ export default function ServiciosPage() {
   return (
     <>
       <Navbar />
-      <main className="flex-1 bg-primary-900">
+      <main className="flex-1 bg-ink-900">
         <PageHeader
           title="¿Qué necesitás resolver?"
           subtitle="No vendemos servicios sueltos. Agrupamos todo por el problema que tenés. Elegí el que te representa."
@@ -40,7 +40,7 @@ export default function ServiciosPage() {
         </section>
 
         {/* Problemas (Nivel 3) */}
-        <section className="py-24 bg-primary-800/40">
+        <section className="py-24 bg-ink-800">
           <div className="container">
             <h2 className="text-h2 text-white text-center">
               Problemas frecuentes

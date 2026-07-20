@@ -14,7 +14,7 @@ export default function ContactoPage() {
   return (
     <>
       <Navbar />
-      <main className="flex-1 bg-primary-900">
+      <main className="flex-1 bg-ink-900">
         <section className="py-24">
           <div className="container max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16">
             {/* Izquierda: copy + datos */}
@@ -28,7 +28,7 @@ export default function ContactoPage() {
               <div className="mt-12 flex flex-col gap-4">
                 <a
                   href={`mailto:${CONTACTO.email}`}
-                  className="text-h4 text-primary-700 hover:underline"
+                  className="text-h4 text-primary-300 hover:underline"
                 >
                   {CONTACTO.email}
                 </a>
@@ -36,7 +36,7 @@ export default function ContactoPage() {
                   href={`https://wa.me/${CONTACTO.whatsapp}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-h4 text-primary-700 hover:underline"
+                  className="text-h4 text-primary-300 hover:underline"
                 >
                   WhatsApp: +54 9 2284 520392
                 </a>
@@ -47,7 +47,7 @@ export default function ContactoPage() {
             </div>
 
             {/* Derecha: formulario */}
-            <div className="bg-primary-800/40 border border-gray-200 rounded-card p-8">
+            <div className="bg-ink-800 border border-white/10 rounded-card p-8">
               <h2 className="text-h3 text-white mb-6">
                 Dejanos tu consulta
               </h2>

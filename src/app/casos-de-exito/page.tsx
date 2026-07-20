@@ -16,7 +16,7 @@ export default function CasosPage() {
   return (
     <>
       <Navbar />
-      <main className="flex-1 bg-primary-900">
+      <main className="flex-1 bg-ink-900">
         <PageHeader
           title="Casos de éxito"
           subtitle="Problemas reales, resueltos de verdad. Así trabajamos."
@@ -35,7 +35,7 @@ export default function CasosPage() {
           </div>
         </section>
 
-        <section className="py-24 text-center bg-primary-800/40">
+        <section className="py-24 text-center bg-ink-800">
           <div className="container">
             <h2 className="text-h2 text-white">El próximo caso puede ser el tuyo</h2>
             <div className="mt-8">

@@ -46,12 +46,12 @@ export default function FormularioContacto() {
   }
 
   const inputClass =
-    "w-full h-11 px-3 rounded-input border border-gray-200 text-body focus:border-primary-700 focus:outline-none";
+    "w-full h-11 px-3 rounded-input border border-white/15 bg-white/5 text-body text-white placeholder:text-primary-300/60 focus:border-primary-400 focus:outline-none";
 
   return (
     <form onSubmit={enviar} className="flex flex-col gap-4 max-w-2xl">
       <div>
-        <label className="block text-small text-gray-600 mb-1">Nombre</label>
+        <label className="block text-small text-primary-200 mb-1">Nombre</label>
         <input
           className={inputClass}
           value={nombre}
@@ -61,7 +61,7 @@ export default function FormularioContacto() {
         />
       </div>
       <div>
-        <label className="block text-small text-gray-600 mb-1">
+        <label className="block text-small text-primary-200 mb-1">
           Contacto (email o WhatsApp)
         </label>
         <input
@@ -73,7 +73,7 @@ export default function FormularioContacto() {
         />
       </div>
       <div>
-        <label className="block text-small text-gray-600 mb-1">
+        <label className="block text-small text-primary-200 mb-1">
           ¿Qué problema tenés?
         </label>
         <textarea
@@ -93,7 +93,7 @@ export default function FormularioContacto() {
 
       {msg && (
         <p
-          className={`text-body mt-2 ${estado === "error" ? "text-red-600" : "text-primary-700"}`}
+          className={`text-body mt-2 ${estado === "error" ? "text-red-400" : "text-green-400"}`}
           role="status"
         >
           {msg}

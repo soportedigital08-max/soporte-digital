@@ -40,6 +40,17 @@
   html,
   body {
     height: 100%;
+    overflow-x: hidden;
+    max-width: 100%;
+  }
+
+  /* Causa raíz de overflow: media sin límite. Nunca desbordar el ancho. */
+  img,
+  svg,
+  video,
+  canvas {
+    max-width: 100%;
+    height: auto;
   }
 
   body {

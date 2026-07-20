@@ -13,17 +13,17 @@ const CHECKS = [
 // Mockup del panel admin — datos FICTICIOS (no exponer info real del cliente).
 function AdminMockup() {
   return (
-    <div className="rounded-card border border-violet-500/30 bg-[#0b0f14] shadow-premium overflow-hidden">
+    <div className="w-full max-w-full overflow-hidden rounded-card border border-violet-500/30 bg-[#0b0f14] shadow-premium">
       {/* barra superior */}
       <div className="flex items-center gap-2 border-b border-white/10 bg-white/5 px-4 py-3">
         <span className="h-3 w-3 rounded-full bg-red-400" />
         <span className="h-3 w-3 rounded-full bg-yellow-400" />
         <span className="h-3 w-3 rounded-full bg-green-400" />
-        <span className="ml-3 text-small text-white/60">panel.empresa.com.ar</span>
+        <span className="ml-3 truncate text-small text-white/60">panel.empresa.com.ar</span>
       </div>
       <div className="flex">
         {/* sidebar */}
-        <aside className="w-32 border-r border-white/10 bg-white/5 p-3 text-small text-white/70">
+        <aside className="hidden w-32 shrink-0 border-r border-white/10 bg-white/5 p-3 text-small text-white/70 sm:block">
           <p className="font-semibold text-violet-300">Gestión</p>
           <p className="mt-2">Socios</p>
           <p>Pagos</p>
@@ -34,10 +34,10 @@ function AdminMockup() {
           <p>Mis pagos</p>
         </aside>
         {/* contenido */}
-        <div className="flex-1 p-4 text-small text-white/80">
-          <div className="flex items-center justify-between">
+        <div className="min-w-0 flex-1 p-4 text-small text-white/80">
+          <div className="flex items-center justify-between gap-2">
             <p className="font-semibold text-white">Socios</p>
-            <span className="rounded bg-violet-600 px-2 py-0.5 text-white">
+            <span className="shrink-0 rounded bg-violet-600 px-2 py-0.5 text-white">
               + Nuevo
             </span>
           </div>
@@ -49,16 +49,16 @@ function AdminMockup() {
             ].map(([n, p, m, e]) => (
               <div
                 key={n}
-                className="flex items-center justify-between rounded bg-white/5 px-3 py-2"
+                className="flex items-center gap-2 rounded bg-white/5 px-3 py-2"
               >
-                <span>{n}</span>
-                <span className="text-white/50">{p}</span>
-                <span>{m}</span>
+                <span className="min-w-0 flex-1 truncate">{n}</span>
+                <span className="hidden truncate text-white/50 sm:block">{p}</span>
+                <span className="shrink-0">{m}</span>
                 <span
                   className={
                     e === "ACTIVO"
-                      ? "rounded bg-green-500/20 px-2 text-green-300"
-                      : "rounded bg-yellow-500/20 px-2 text-yellow-300"
+                      ? "shrink-0 rounded bg-green-500/20 px-2 text-green-300"
+                      : "shrink-0 rounded bg-yellow-500/20 px-2 text-yellow-300"
                   }
                 >
                   {e}

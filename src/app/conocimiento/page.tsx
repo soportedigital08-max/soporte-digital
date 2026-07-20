@@ -16,7 +16,7 @@ export default function ConocimientoPage() {
   return (
     <>
       <Navbar />
-      <main className="flex-1 bg-primary-900">
+      <main className="flex-1 bg-ink-900">
         <PageHeader
           title="Conocimiento"
           subtitle="Guías y artículos para entender y resolver tus problemas tecnológicos."
@@ -35,7 +35,7 @@ export default function ConocimientoPage() {
           </div>
         </section>
 
-        <section className="py-24 text-center bg-primary-800/40">
+        <section className="py-24 text-center bg-ink-800">
           <div className="container">
             <h2 className="text-h2 text-white">¿Necesitás que lo resolvamos?</h2>
             <div className="mt-8">

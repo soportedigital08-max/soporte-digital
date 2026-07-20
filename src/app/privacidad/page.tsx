@@ -14,7 +14,7 @@ export default function PrivacidadPage() {
   return (
     <>
       <Navbar />
-      <main className="flex-1 bg-primary-900">
+      <main className="flex-1 bg-ink-900">
         <div className="container max-w-3xl mx-auto prose">
           <h1 className="text-h1 text-white">Política de Privacidad</h1>
           <p className="text-body text-primary-300 mt-2">
@@ -26,7 +26,7 @@ export default function PrivacidadPage() {
             Soporte Digital (en adelante, "nosotros") es un emprendimiento de
             soluciones tecnológicas con base en Olavarría, Argentina. Podés
             contactarnos en{" "}
-            <a className="text-primary-700 underline" href={`mailto:${CONTACTO.email}`}>
+            <a className="text-primary-300 underline" href={`mailto:${CONTACTO.email}`}>
               {CONTACTO.email}
             </a>
             .

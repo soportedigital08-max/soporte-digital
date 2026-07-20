@@ -4,12 +4,12 @@ import { PROBLEMAS_DESTACADOS } from "@/lib/servicios";
 // Problemas destacados en la Home — deben coincidir con 03-ARQUITECTURA.md §4 Nivel 3
 export default function Problemas() {
   return (
-    <section className="py-24 bg-surface">
+    <section className="py-24 bg-ink-900">
       <div className="container">
-        <h2 className="text-h2 text-gray-900 text-center">
+        <h2 className="text-h2 text-white text-center">
           ¿Qué problema estás teniendo?
         </h2>
-        <p className="text-body-lg text-gray-600 text-center mt-4 max-w-2xl mx-auto">
+        <p className="text-body-lg text-primary-100 text-center mt-4 max-w-2xl mx-auto">
           Elegí tu dolor. Nosotros lo resolvemos.
         </p>
 
@@ -20,6 +20,7 @@ export default function Problemas() {
               title={problema.titulo}
               description={problema.situacion}
               href={`/servicios/${problema.slug}`}
+              variant="dark"
             />
           ))}
         </div>
