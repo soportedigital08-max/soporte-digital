@@ -438,6 +438,59 @@ Relacionado con: Documento Maestro, Decisiones, Roadmap
 - Caso de éxito Ippon: formato case-study card con espacio para cita/testimonio (dato del
   cliente, a proveer) y captura anonimizada del portal (consentimiento).
 - Imágenes reales en secciones de servicios/casos (actualmente cards de texto).
+
+---
+
+## 2026-07-19 — Fixes premium (overflow, contraste, alineación total)
+
+### Tarea 1 — Overflow horizontal mobile (Motorola G9)
+- Causa raíz: elemento sin max-width + body sin overflow-x.
+- Red de seguridad global: `html, body { overflow-x: hidden; max-width: 100% }` en globals.css.
+- Media sin límite: `img, svg, video, canvas { max-width: 100%; height: auto }`.
+- Mockup CRM (DesarrolloMedida): `w-full max-w-full overflow-hidden`, sidebar
+  `hidden sm:block`, filas `min-w-0 flex-1 truncate` + `shrink-0` en montos/estado
+  (no desbordan en 360px).
+- WhatsAppFloat: ya usa `bottom-5 right-5` (1.25rem, relativo seguro) -> sin cambio.
+- Verificado: scrollWidth == clientWidth en desktop; vision confirma NO hay scroll
+  horizontal y WhatsApp flotante visible. (Emulación de viewport 360/393/428 no expuesta
+  por el navegador headless; corrección por construcción + ausencia de overflow en desktop.)
+
+### Tarea 2 — Contraste "¿Qué problema estás teniendo?"
+- Antes: Card claro (blanco) sobre fondo cercano -> bajo contraste reportado.
+- Ahora: Card variant="dark" (bg-ink-800 sobre ink-900), título blanco, cuerpo
+  text-primary-100 (#dbeafe). Ratios ~18:1 y ~14:1 (WCAG AAA, very > AA 4.5:1).
+- Problemas pasa a bg-ink-900 (dark cohesivo con hero).
+
+### Tarea 3 — Auditoría consistencia premium (todas las rutas)
+Rutas del build: 42 (1 home, 6 top-level, 16 servicios/[slug], 6 casos/[slug],
+6 conocimiento/[slug]).
+Estándar: PageHeader dark + ink-900, Space Grotesk/Inter, cards variante dark,
+WhatsApp flotante, sin overflow.
+
+Páginas DESALINEADAS y corregidas:
+- /servicios/[slug] (16): bg-primary-900 -> bg-ink-900; header suelto -> PageHeader;
+  epígrafe text-primary-700 -> eyebrow text-primary-300; cards -> variant dark;
+  bloque Resultado bg-primary-900 -> bg-ink-800.
+- /casos-de-exito/[slug] (6): igual que servicios/[slug].
+- /conocimiento/[slug] (6): igual; epígrafe categoria + PageHeader.
+- /servicios, /casos-de-exito, /conocimiento, /nosotros, /contacto, /privacidad:
+  main bg-primary-900 -> bg-ink-900; bg-primary-800/40 -> bg-ink-800;
+  text-primary-700 -> text-primary-300; border-gray-200 -> border-white/10.
+- FormularioContacto: labels text-gray-600 -> text-primary-200; inputs transparentes
+  con borde gris -> bg-white/5 + texto blanco + borde claro; msg text-primary-700 ->
+  text-green-400 / text-red-400.
+- PageHeader: + props `eyebrow` y `children` (CTA) para reusar en todas las subpáginas.
+- Card: + variant "dark" (reutilizable en secciones oscuras).
+
+Estado final: todas las rutas usan bg-ink-900 + PageHeader + cards dark + WhatsApp
+flotante. Build 42/42 OK. HTTP 200 en home, /servicios/pc-lenta, /contacto.
+Contraste validado (HTML + vision).
+
+Pendiente (no bloquea):
+- Horario real de atención (footer usa placeholder).
+- Emulación de viewport 360/393/428 en navegador headless no disponible en esta sesión;
+  overflow resuelto por construcción + verificado en desktop.
+*** End Patch
 *** End Patch
 *** End Patch
 
