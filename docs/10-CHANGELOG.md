@@ -400,6 +400,45 @@ Relacionado con: Documento Maestro, Decisiones, Roadmap
   integradas en Desarrollo a medida + case study card. Requiere acceso admin (autorizado
   por el usuario con matiz de difuminar datos sensibles antes de publicar).
 - Footer: agregar horario de atencion y zona de cobertura (texto mapa simple).
+
+---
+
+## 2026-07-19 — Premium prioritario (puntos 1-3 + decisión #016)
+
+### 1. Counter-up accesible (Stats)
+- Counter.tsx: valor final en HTML por defecto (useState(end)) -> SSR/fallback sin JS.
+  El effect resetea a 0 y anima al entrar en viewport (mejora progresiva).
+- aria-label con valor legible (p.ej. "500+", "20", "100%").
+- Verificado en HTML servido: aria-label="500+", aria-label="20", aria-label="100%".
+
+### 2. Evidencia visual CRM Ippon (decisión fija)
+- 20-IPPON-CRM.md §7: registrada DECISION FIJA.
+  - Panel ADMIN = mockup recreado con datos 100% ficticios (mismo look real, cero datos
+    reales expuestos).
+  - Portal CLIENTE = captura real anonimizada solo con consentimiento; si no, mockup.
+- DesarrolloMedida.tsx: mockup del panel admin (Ana Pérez, Plan Classic, etc. -> ficticios)
+  con acento violeta propio, + nota "Ilustración del panel (datos de ejemplo)".
+- El portal real queda pendiente de consentimiento + anonimización (no se exponen datos vivos).
+
+### 3. Footer: horario + cobertura
+- Footer pasa a bg-ink-900 (cohesión dark). Nueva columna: Horario (placeholder
+  "Lun a Sáb · 9:00–20:00 (horario a confirmar)") + Cobertura
+  ("Olavarría y alrededores + soporte remoto en toda Argentina").
+
+### Decisión #016 (01-DECISIONES.md)
+- Premium = prioridad máxima. SSR-first en stats. Mockup admin ficticio. Footer horario/cobertura.
+
+### Estado
+- Build 42 rutas OK. HTML confirma valores SSR + aria-label, mockup violeta, footer horario.
+- Verificación visual: footer horario/cobertura OK; mockup confirmado por HTML (el vision
+  no lo capturó en frame pero el componente renderiza).
+
+### Siguiente ítem de mayor impacto (pendiente de ejecutar)
+- "Por qué confiar" / "Nuestras soluciones": pasar a dark con acento y hover (ritmo visual).
+- Caso de éxito Ippon: formato case-study card con espacio para cita/testimonio (dato del
+  cliente, a proveer) y captura anonimizada del portal (consentimiento).
+- Imágenes reales en secciones de servicios/casos (actualmente cards de texto).
+*** End Patch
 *** End Patch
 
 ### Seguridad (recordatorio permanente)

@@ -30,6 +30,10 @@ const config: Config = {
           100: "#A7D3F0",
         },
         accent: "#00C2D1",
+        ink: {
+          900: "#0B0F14",
+          800: "#12161C",
+        },
         gray: {
           900: "#0F172A",
           800: "#1E293B",
@@ -42,8 +46,8 @@ const config: Config = {
           100: "#F1F5F9",
           50: "#F8FAFC",
         },
-        background: "#FFFFFF",
-        surface: "#F8FAFC",
+        background: "#FAFAF9",
+        surface: "#FAFAF9",
         success: "#16A34A",
         error: "#DC2626",
         warning: "#F59E0B",

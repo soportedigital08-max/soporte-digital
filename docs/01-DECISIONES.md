@@ -449,3 +449,32 @@ Notas de seguridad:
 - `next` subido de 14.2.5 → 14.2.35 para parchear vulnerabilidad crítica.
 - `postcss` forzado a 8.5.10 en todo el árbol (override) para cerrar advisory moderada.
 - Queda 1 advisory "high" de Next solo resoluble en `next@16` (breaking) y NO aplicable a este sitio (no usa next/image con remotePatterns, middleware, rewrites, i18n ni CSP nonces). Se mantiene en 14.2.35 por coherencia con esta decisión.
+
+---
+
+## DECISIÓN #016
+Fecha: 2026-07-19
+Estado: Vigente
+Tema: Prioridad premium + evidencia visual del CRM (Ippon Group)
+
+Decisión:
+- La percepción PREMIUM es la prioridad sobre cualquier otra ítem del sitio.
+- Counter-up en Stats: el valor final (500 / 20 / 100) debe estar en el HTML por SSR
+  con `aria-label` accesible; la animación JS es solo mejora progresiva (no el único
+  portador del valor).
+- Evidencia visual del CRM Ippon:
+  - Panel ADMIN = mockup recreado con datos 100% ficticios (mismo look real, cero datos
+    ni estructura reales expuestos). Decisión fija en 20-IPPON-CRM.md §7.
+  - Portal del CLIENTE = captura real anonimizada solo con consentimiento; si no hay
+    consentimiento/anonimización verificable, se usa mockup.
+- Footer debe incluir Horario de atención (placeholder si el dato real no existe aún) y
+  Zona de cobertura.
+
+Motivo:
+- Premium = autoridad percibida sin exponer datos de terceros.
+- Accesibilidad y SSR-first evitan dependencia de JS para contenido clave.
+
+Impacto:
+- Stats accesibles y SEO-friendly.
+- Sección Desarrollo a medida con identidad visual propia (acento violeta) + mockup.
+- Footer con horario/cobertura.
