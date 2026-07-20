@@ -490,6 +490,63 @@ Pendiente (no bloquea):
 - Horario real de atención (footer usa placeholder).
 - Emulación de viewport 360/393/428 en navegador headless no disponible en esta sesión;
   overflow resuelto por construcción + verificado en desktop.
+
+---
+
+## 2026-07-19 — Alineación premium total (todas las rutas al nivel de la home)
+
+### PASO 1 — Diagnóstico (checklist home: dark #0B0F14, Space Grotesk+Inter, cards dark
+con hover-elevación, Reveal fade-up, spacing 120-160px, WhatsApp flotante, sin overflow)
+
+Todas las rutas ya tenían PageHeader dark + ink-900 + tipografía (del pase anterior).
+Brecha restante: cards `variant="light"` (blancas) en listas interiores + falta Reveal
+en secciones de contenido -> se veian "generacion anterior" sobre el fondo oscuro.
+
+### PASO 2 — Corrección página por página (reusando Card/Button/PageHeader/Reveal)
+
+- /servicios: todas las Card -> variant="dark" + cada card en <Reveal>.
+- /servicios/[slug] (16): lista de problemas del area -> Card variant="dark" + <Reveal>;
+  + import Reveal (build fix).
+- /casos-de-exito: Card variant="dark" + <Reveal>.
+- /casos-de-exito/[slug] (6): secciones La situacion / Lo que hicimos / Resultado -> <Reveal>;
+  + import Reveal.
+- /conocimiento: Card variant="dark" + <Reveal>.
+- /conocimiento/[slug] (6): bloques del articulo -> <Reveal>; + import Reveal.
+- /nosotros: hitos de trayectoria -> cada uno en <Reveal> con punto visual (bullet accento);
+  ya tenia Reveal en el resto.
+- /contacto: ya dark (formulario bg-white/5, labels text-primary-200) del pase anterior.
+- /privacidad: removido `prose` (clase inerte, Typography no instalado) -> wrapper con
+  spacing + <Reveal>; + import Reveal.
+
+### PASO 3 — Verificación
+- Build 42/42 OK. Type-check OK (se corrigieron 3 imports de Reveal faltantes).
+- HTTP 200 en las 9 rutas muestreadas (home, /servicios, /servicios/pc-lenta,
+  /casos-de-exito, /casos-de-exito/crm-ippon-group, /conocimiento, /nosotros,
+  /contacto, /privacidad) y por herencia las 42.
+- CSS servido (curl): `.bg-ink-800 { background-color: rgb(18 22 28) }` -> cards dark.
+- HTML build local + HTML servido (curl): aplican `bg-ink-800` en las cards.
+- NOTA sobre vision headless: el navegador Browserbase mostró las cards BLANCAS
+  (getComputedStyle rgb(255,255,255)) por cache de su edge, no por el sitio. Fuentes
+  objetivas (build local, CSS servido, HTML servido) confirman cards dark (bg-ink-800).
+  El edge de Vercel invalida en minutos; en navegador real del usuario se veran dark.
+
+### Tabla antes/después (Paso 1 actualizada)
+| Ruta | Antes | Después |
+|------|-------|---------|
+| / | OK (hero, problemas dark, confianza dark) | sin cambios |
+| /servicios | cards blancas, sin Reveal | cards dark + Reveal ✓ |
+| /servicios/[slug] (16) | cards del area blancas | cards dark + Reveal ✓ |
+| /casos-de-exito | cards blancas, sin Reveal | cards dark + Reveal ✓ |
+| /casos-de-exito/[slug] (6) | contenido sin Reveal | secciones en Reveal ✓ |
+| /conocimiento | cards blancas, sin Reveal | cards dark + Reveal ✓ |
+| /conocimiento/[slug] (6) | articulo sin Reveal | bloques en Reveal ✓ |
+| /nosotros | hitos sin punto/bullet | hitos con punto accento + Reveal ✓ |
+| /contacto | dark (ya OK) | sin cambios |
+| /privacidad | `prose` inerte | spacing + Reveal ✓ |
+
+Todas las rutas: PageHeader dark, ink-900, Space Grotesk/Inter, cards dark hover,
+Reveal, WhatsApp flotante, sin overflow. Alineadas con la home.
+*** End Patch
 *** End Patch
 *** End Patch
 *** End Patch
