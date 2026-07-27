@@ -16,8 +16,8 @@ const CONTACTO = {
   email: "soportedigital08@gmail.com",
   whatsapp: "5492284520392", // +54 9 2284 520392
   ubicacion: "Olavarría, Buenos Aires — Argentina",
-  // Horario: placeholder hasta confirmar dato real de negocio.
-  horario: "Lun a Sáb · 9:00–20:00 (horario a confirmar)",
+  horario: "Lun a Vie · 9:00–17:00 · Sáb · 9:00–14:00",
+  horarioNota: "Fuera de horario podés escribirnos por WhatsApp y te respondemos al instante.",
   cobertura: "Olavarría y alrededores + soporte remoto en toda Argentina",
 };
 
@@ -85,6 +85,9 @@ export default function Footer() {
         <div className="flex flex-col gap-2 text-body text-primary-100">
           <span className="font-medium text-white">Horario</span>
           <span className="text-small text-primary-200">{CONTACTO.horario}</span>
+          <span className="text-small text-primary-200 mt-1">
+            {CONTACTO.horarioNota}
+          </span>
           <span className="font-medium text-white mt-2">Cobertura</span>
           <span className="text-small text-primary-200">
             {CONTACTO.cobertura}
