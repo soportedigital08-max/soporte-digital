@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-// Landing premium emocional para Lleras Park Hotel Boutique (Olavarría).
+// Landing premium emocional para Hotel Los Pinares Boutique (Olavarría).
 // Hero fullscreen inmersivo, CTA "Reservar" fijo, storytelling visual.
 // Construible en Next.js + Tailwind.
 
@@ -20,7 +20,7 @@ const NAV = [
 ];
 
 export const metadata = {
-  title: "Lleras Park Hotel Boutique — Olavarría",
+  title: "Hotel Los Pinares Boutique — Olavarría",
   description:
     "Hotel boutique en Olavarría. Descanso, exclusividad y experiencia. 25 habitaciones, hidromasaje, piscina y desayuno.",
 };
@@ -32,7 +32,7 @@ export default function Page() {
       <header className="fixed top-0 inset-x-0 z-50 bg-stone-950/70 backdrop-blur border-b border-stone-800">
         <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
           <span className="text-base font-semibold tracking-tight text-stone-50">
-            Lleras Park <span className="text-amber-400">Hotel</span>
+            Los Pinares <span className="text-amber-400">Hotel</span>
           </span>
           <nav className="hidden md:flex gap-7 text-sm text-stone-300">
             {NAV.map((n) => (
@@ -42,7 +42,7 @@ export default function Page() {
             ))}
           </nav>
           <a
-            href="https://wa.me/542284460590"
+            href="https://wa.me/542200000000"
             target="_blank"
             rel="noopener noreferrer"
             className="px-4 py-2 rounded-full bg-amber-500 hover:bg-amber-400 text-stone-950 text-sm font-semibold transition-colors"
@@ -75,7 +75,7 @@ export default function Page() {
           </p>
           <div className="mt-8 flex flex-col sm:flex-row gap-3">
             <a
-              href="https://wa.me/542284460590"
+              href="https://wa.me/542200000000"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center px-7 py-3 rounded-full bg-amber-500 hover:bg-amber-400 text-stone-950 font-semibold transition-colors"
@@ -178,7 +178,7 @@ export default function Page() {
             </p>
             <div className="mt-6 flex gap-3">
               <a
-                href="https://wa.me/542284460590"
+                href="https://wa.me/542200000000"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-6 py-3 rounded-full bg-amber-500 hover:bg-amber-400 text-stone-950 font-semibold transition-colors"
@@ -224,7 +224,7 @@ export default function Page() {
             <span className="font-semibold text-amber-200">empieza con un click.</span>
           </h2>
           <a
-            href="https://wa.me/542284460590"
+            href="https://wa.me/542200000000"
             target="_blank"
             rel="noopener noreferrer"
             className="mt-8 inline-flex items-center justify-center px-9 py-4 rounded-full bg-amber-500 hover:bg-amber-400 text-stone-950 font-bold text-lg transition-colors"
@@ -237,7 +237,7 @@ export default function Page() {
       <footer className="border-t border-stone-800">
         <div className="max-w-6xl mx-auto px-4 py-10 flex flex-col md:flex-row items-center justify-between gap-4">
           <span className="text-stone-400 text-sm">
-            Lleras Park Hotel · Ruta 226 (Km 297) esq. España, Olavarría
+            Los Pinares Hotel · Av. del Sol 123, Olavarría
           </span>
           <span className="text-amber-400 text-sm font-semibold">Demo · Soporte Digital</span>
           <Link href="/studio" className="text-stone-400 text-sm hover:text-amber-300">
