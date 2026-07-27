@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Presupuesto · Sistema de Gestión Sportia — Soporte Digital</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0f1115;--panel:#161a22;--panel2:#1c2130;--cian:#22d3ee;--azul:#0e7490;--txt:#e5e7eb;--mut:#9ca3af;--verde:#34d399;--linea:#242a38}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif}
+body{background:var(--bg);color:var(--txt);line-height:1.6}
+.wrap{max-width:900px;margin:0 auto;padding:40px 22px 80px}
+/* header */
+.head{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;padding-bottom:26px;border-bottom:1px solid var(--linea)}
+.brand{display:flex;align-items:center;gap:12px}
+.brand .sd{width:44px;height:44px;border-radius:12px;background:linear-gradient(135deg,var(--cian),var(--azul));display:flex;align-items:center;justify-content:center;font-weight:900;color:#06222b;font-size:18px}
+.brand b{font-size:17px}.brand small{display:block;color:var(--mut);font-size:12px}
+.head .num{text-align:right;font-size:13px;color:var(--mut)}
+.head .num b{color:var(--cian);font-size:15px}
+/* hero */
+.hero{margin:34px 0 8px;display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.hero img{width:74px;height:74px;border-radius:18px;background:#fff;object-fit:contain;padding:6px}
+.hero h1{font-size:clamp(24px,4vw,34px);font-weight:900;line-height:1.15}
+.hero .sub{color:var(--mut);font-size:15px}
+.chip{display:inline-block;background:rgba(34,211,238,.12);color:var(--cian);font-size:12px;font-weight:700;padding:5px 12px;border-radius:99px;border:1px solid rgba(34,211,238,.3);margin-top:8px}
+/* secciones */
+h2{font-size:19px;font-weight:800;margin:38px 0 14px;display:flex;align-items:center;gap:10px}
+h2::before{content:"";width:22px;height:3px;background:var(--cian);border-radius:2px}
+.card{background:var(--panel);border:1px solid var(--linea);border-radius:16px;padding:22px}
+table{width:100%;border-collapse:collapse;font-size:14.5px}
+th{text-align:left;color:var(--mut);font-size:11.5px;text-transform:uppercase;letter-spacing:.8px;padding:10px 12px;border-bottom:1px solid var(--linea)}
+td{padding:12px;border-bottom:1px solid var(--linea);vertical-align:top}
+tr:last-child td{border:0}
+td.r{text-align:right;font-weight:700;white-space:nowrap}
+.tach{color:var(--mut);text-decoration:line-through;font-weight:500}
+.big{font-size:17px;color:var(--cian)}
+.ok{color:var(--verde);font-weight:700}
+/* precio destacado */
+.precio-box{background:linear-gradient(135deg,rgba(34,211,238,.10),rgba(14,116,144,.10));border:1px solid rgba(34,211,238,.35);border-radius:18px;padding:26px;margin-top:14px;text-align:center}
+.precio-box .lista{color:var(--mut);font-size:15px}
+.precio-box .lista s{color:#f87171}
+.precio-box .final{font-size:clamp(30px,5vw,42px);font-weight:900;color:var(--cian);margin:6px 0}
+.precio-box .cuotas{font-size:17px;font-weight:700}
+.precio-box .nota{color:var(--mut);font-size:13px;margin-top:8px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}
+@media(max-width:640px){.grid2{grid-template-columns:1fr}}
+.mini{background:var(--panel2);border:1px solid var(--linea);border-radius:14px;padding:16px 18px}
+.mini .t{font-size:12.5px;color:var(--mut);text-transform:uppercase;letter-spacing:.6px}
+.mini .v{font-size:21px;font-weight:800;color:var(--cian);margin-top:4px}
+.mini .d{font-size:12.5px;color:var(--mut);margin-top:3px}
+ul.lista-check{list-style:none}
+ul.lista-check li{padding:7px 0 7px 30px;position:relative;font-size:14.5px;border-bottom:1px dashed var(--linea)}
+ul.lista-check li:last-child{border:0}
+ul.lista-check li::before{content:"✓";position:absolute;left:4px;color:var(--verde);font-weight:900}
+ul.lista-x li::before{content:"•";color:var(--cian)}
+.dos-col{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:700px){.dos-col{grid-template-columns:1fr}}
+.tag-si{color:var(--verde);font-weight:800;font-size:13px}
+.tag-no{color:#fbbf24;font-weight:800;font-size:13px}
+/* timeline */
+.tl{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-top:14px}
+.paso{background:var(--panel2);border:1px solid var(--linea);border-radius:14px;padding:16px}
+.paso .n{width:30px;height:30px;border-radius:99px;background:var(--cian);color:#06222b;font-weight:900;display:flex;align-items:center;justify-content:center;margin-bottom:8px}
+.paso b{font-size:14px}.paso p{font-size:12.5px;color:var(--mut);margin-top:4px}
+.footer{margin-top:50px;padding-top:22px;border-top:1px solid var(--linea);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;color:var(--mut);font-size:13px}
+.footer a{color:var(--cian);text-decoration:none}
+.btn-demo{display:inline-block;background:linear-gradient(135deg,var(--cian),var(--azul));color:#06222b;font-weight:800;padding:13px 26px;border-radius:12px;text-decoration:none;margin-top:16px}
+.aviso{font-size:12.5px;color:var(--mut);margin-top:16px;padding:12px 16px;background:var(--panel2);border-radius:12px;border-left:3px solid var(--cian)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="head">
+    <div class="brand">
+      <div class="sd">SD</div>
+      <div><b>Soporte Digital</b><small>soportedigital.com.ar · Olavarría</small></div>
+    </div>
+    <div class="num">PRESUPUESTO <b>Nº 2026-014</b><br>Fecha: 28/07/2026 · Validez: 15 días</div>
+  </div>
+
+  <div class="hero">
+    <img src="logo.jpg" alt="Sportia">
+    <div>
+      <h1>Sistema de Gestión Sportia</h1>
+      <div class="sub">Plataforma a medida para costos, caja diaria, pedidos, clientes y estadísticas</div>
+      <span class="chip">Propuesta exclusiva · Cliente de confianza</span>
+    </div>
+  </div>
+
+  <h2>Qué incluye el sistema</h2>
+  <div class="card">
+    <ul class="lista-check">
+      <li><b>Costos y artículos:</b> fichas de costeo idénticas a sus planillas (telas, bordado, corte, confección, diseño). El sistema calcula solo el costo total, el precio de venta y el reparto. Si sube una tela, se recalculan todos los precios.</li>
+      <li><b>Caja diaria:</b> registro de ventas en segundos, formas de pago (Mercado Pago, efectivo, débito, Cuenta DNI), totales automáticos e historial completo de cajas.</li>
+      <li><b>Pedidos de mercería:</b> cierres, elásticos e insumos con estados (pedido, recibido, stock bajo) y avisos de reposición.</li>
+      <li><b>Clientes y clubes:</b> historial de compras, ranking y estadísticas por club.</li>
+      <li><b>Gráficos y estadísticas:</b> ventas por semana, artículos más vendidos, formas de pago, todo visual y en tiempo real.</li>
+      <li><b>Sugerencias inteligentes:</b> el sistema avisa solo — stock por agotarse, prendas con mejor margen, clientes frecuentes, precios desactualizados.</li>
+      <li><b>Usuarios y roles:</b> Administrador, Ventas, Producción y Consulta. Ustedes mismos crean usuarios y asignan roles. Cada uno ve solo lo que le corresponde.</li>
+      <li><b>Importación de sus planillas Excel:</b> suben su planilla actual y el sistema se actualiza solo. Arrancan con todo su historial cargado, no de cero.</li>
+      <li><b>Exportación a Excel:</b> cualquier dato se descarga a Excel con un botón, en el formato de siempre.</li>
+      <li><b>Uso desde el celular:</b> versión online accesible desde computadora, tablet y celular, en el negocio o donde estén.</li>
+      <li><b>Copias de seguridad automáticas</b> en servidores de Soporte Digital.</li>
+    </ul>
+  </div>
+
+  <h2>Inversión</h2>
+  <div class="precio-box">
+    <div class="lista">Valor de lista del desarrollo: <s>$ 1.000.000</s></div>
+    <div class="final">$ 800.000</div>
+    <div class="cuotas">💳 12 cuotas fijas <b>sin interés</b> de <span style="color:var(--cian)">$ 66.700</span></div>
+    <div class="nota">Bonificación de $ 200.000 por cliente de confianza + financiación exclusiva sin interés.<br>Primera cuota al confirmar el proyecto. Cuotas fijas: no se ajustan durante los 12 meses.</div>
+  </div>
+
+  <div class="grid2">
+    <div class="mini">
+      <div class="t">Servicio mensual · Hosting</div>
+      <div class="v">$ 45.000 <span style="font-size:13px;color:var(--mut)">/mes</span></div>
+      <div class="d">Alojamiento del sistema en servidor propio de Soporte Digital, con copias de seguridad. Se abona por separado de las cuotas.</div>
+    </div>
+    <div class="mini">
+      <div class="t">Servicio anual · Dominio</div>
+      <div class="v">$ 35.000 <span style="font-size:13px;color:var(--mut)">/año</span></div>
+      <div class="d">Registro y gestión del dominio propio del sistema. Un solo pago por año.</div>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:14px">
+    <table>
+      <thead><tr><th>Concepto</th><th>Frecuencia</th><th style="text-align:right">Importe</th></tr></thead>
+      <tbody>
+        <tr><td>Desarrollo del sistema (12 cuotas sin interés)</td><td>Mensual · 12 meses</td><td class="r big">$ 66.700</td></tr>
+        <tr><td>Hosting (alojamiento + backups)</td><td>Mensual · permanente</td><td class="r">$ 45.000</td></tr>
+        <tr><td>Dominio</td><td>Anual</td><td class="r">$ 35.000</td></tr>
+        <tr><td><b>Total mensual durante el primer año</b><br><small style="color:var(--mut)">(cuota sistema + hosting)</small></td><td></td><td class="r big">$ 111.700</td></tr>
+        <tr><td><b>Desde el mes 13</b><br><small style="color:var(--mut)">(solo hosting; el sistema ya es de ustedes)</small></td><td>Mensual</td><td class="r ok">$ 45.000</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="aviso">Las 12 cuotas del desarrollo son <b>fijas y sin interés</b> (ese es el beneficio). El hosting es un servicio aparte y puede actualizarse semestralmente según costos de infraestructura.</div>
+
+  <h2>Soporte, adaptación y actualizaciones — reglas claras</h2>
+  <div class="dos-col">
+    <div class="card">
+      <p class="tag-si">✓ SIN COSTO</p>
+      <ul class="lista-check" style="margin-top:8px">
+        <li><b>Período de adaptación: 60 días</b> desde la entrega. Capacitación a todos los usuarios, ajustes menores y acompañamiento directo por WhatsApp.</li>
+        <li><b>Corrección de errores del sistema:</b> sin costo, siempre, sin límite de tiempo.</li>
+        <li><b>Copias de seguridad automáticas:</b> incluidas en el hosting.</li>
+        <li><b>Migración inicial de sus planillas:</b> incluida en el desarrollo.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <p class="tag-no">⚠ CON COSTO (luego de los 60 días)</p>
+      <ul class="lista-check lista-x" style="margin-top:8px">
+        <li><b>Funcionalidades nuevas</b> (módulos o reportes que no figuran en este presupuesto): se cotizan aparte antes de hacerse.</li>
+        <li><b>Ajustes menores posteriores:</b> por trabajo puntual, o mediante <b>abono opcional de mantenimiento de $ 50.000/mes</b> (incluye ajustes menores mensuales y atención prioritaria).</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2>Plan de trabajo y tiempos</h2>
+  <div class="tl">
+    <div class="paso"><div class="n">1</div><b>Confirmación</b><p>Visto bueno del mockup + primera cuota. Arranca el desarrollo.</p></div>
+    <div class="paso"><div class="n">2</div><b>Semana 2-3</b><p>Primera entrega parcial: caja diaria funcionando para probar.</p></div>
+    <div class="paso"><div class="n">3</div><b>Día 45-60</b><p>Entrega del sistema completo con sus datos históricos ya cargados.</p></div>
+    <div class="paso"><div class="n">4</div><b>+60 días</b><p>Período de adaptación sin costo: capacitación, ajustes y acompañamiento.</p></div>
+  </div>
+
+  <h2>Preparado para crecer</h2>
+  <div class="card">
+    <p style="font-size:14.5px">La plataforma queda preparada para integrar a futuro una <b style="color:var(--cian)">tienda online</b> conectada al mismo sistema: mismos artículos, precios y stock, ventas con Mercado Pago que entran directo a la caja. No es necesario decidirlo ahora — la base ya queda lista. Se cotiza como módulo aparte cuando lo deseen.</p>
+    <a class="btn-demo" href="index.html">▶ Ver demostración interactiva del sistema</a>
+  </div>
+
+  <div class="footer">
+    <div><b style="color:var(--txt)">Soporte Digital</b> · Olavarría, Buenos Aires<br>Ariel · <a href="https://soportedigital.com.ar">soportedigital.com.ar</a></div>
+    <div style="text-align:right">Presupuesto Nº 2026-014 · Validez 15 días<br>Precios en pesos argentinos (ARS)</div>
+  </div>
+
+</div>
+</body>
+</html>
