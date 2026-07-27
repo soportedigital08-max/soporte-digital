@@ -240,7 +240,8 @@ export default function Page() {
             Los Pinares Hotel · Av. del Sol 123, Olavarría
           </span>
           <span className="text-amber-400 text-sm font-semibold">Demo · Soporte Digital</span>
-          <Link href="/studio" className="text-stone-400 text-sm hover:text-amber-300">
+          <Link href="/studio"
+            <a href="https://soportedigital.com.ar" className="text-sm text-stone-400 hover:text-amber-300">Volver a soportedigital.com.ar</a> className="text-stone-400 text-sm hover:text-amber-300">
             Conocé el Studio →
           </Link>
         </div>
