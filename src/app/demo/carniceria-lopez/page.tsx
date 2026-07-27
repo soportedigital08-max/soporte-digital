@@ -249,11 +249,13 @@ export default function Page() {
           <span className="text-neutral-400 text-sm">
             Carnicería López · Av. San Martín 234, Olavarría
           </span>
-          <span className="text-rose-500 text-sm font-semibold">
-            Demo · Soporte Digital
-          </span>
-          <Link href="/studio"
-            <a href="https://soportedigital.com.ar" className="text-sm text-stone-400 hover:text-amber-300">Volver a soportedigital.com.ar</a> className="text-neutral-400 text-sm hover:text-rose-400">
+          <a
+            href="https://soportedigital.com.ar"
+            className="text-amber-400 text-sm hover:text-white transition-colors"
+          >
+            Volver a soportedigital.com.ar
+          </a>
+          <Link href="/studio" className="text-neutral-400 text-sm hover:text-rose-400">
             Conocé el Studio →
           </Link>
         </div>
