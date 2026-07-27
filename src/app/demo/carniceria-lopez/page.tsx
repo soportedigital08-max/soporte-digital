@@ -8,6 +8,8 @@ const FOTO = {
   corte: "https://images.unsplash.com/photo-1558030006-450675393462?w=800&q=70",
   carnicero: "https://images.unsplash.com/photo-1432139555190-58524dae6a55?w=800&q=70",
   parrilla: "https://images.unsplash.com/photo-1551028719-00167b16eac5?w=800&q=70",
+  cta: "https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?w=1600&q=70",
+  milanesas: "/descargas/milanesas-lopez.png",
 };
 
 const NAV = [
@@ -107,7 +109,7 @@ export default function Page() {
           {[
             { t: "Cortes al vacío", d: "Envasamos al vacío para que dure más en tu freezer, listo para usar.", img: FOTO.corte },
             { t: "Corte a medida", d: "Milanesas, matambre, asado: lo cortamos como lo necesitás.", img: FOTO.carnicero },
-            { t: "Picadas y salchichas", d: "Elaboración propia, sin conservantes ni sorpresas.", img: FOTO.parrilla },
+            { t: "Milanesas de ternera, cerdo y pollo", d: "Rebozadas a medida, listas para el horno o la sartén.", img: FOTO.milanesas },
           ].map((c) => (
             <article
               key={c.t}
@@ -218,8 +220,8 @@ export default function Page() {
       {/* CTA FINAL */}
       <section id="comprar" className="relative overflow-hidden">
         <img
-          src={FOTO.parrilla}
-          alt="Parrilla"
+          src={FOTO.cta}
+          alt="Carnes"
           className="absolute inset-0 w-full h-full object-cover opacity-30"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/90 to-neutral-950/70" />
