@@ -558,3 +558,61 @@ Reveal, WhatsApp flotante, sin overflow. Alineadas con la home.
 ### Nota de seguridad (recordatorio)
 - Build local verificado: `next@14.2.35` (parche crítico), `postcss@8.5.10` (override).
 - Queda 1 advisory "high" solo resoluble en `next@16` (breaking, no aplicable a este sitio). Ver DECISIÓN #015.
+
+---
+
+## 2026-07-26 / 2026-07-27 — MÓDULO STUDIO (mockups de comercios)
+
+### Objetivo
+Vitrina de landing pages premium para vender diseño web + hosting recurrente a
+comercios de Olavarría. Cada mockup = "así quedaría tu sitio".
+
+### Decisiones de diseño (fijas, Ariel)
+- Paleta PROPIA por rubro (NO la de Soporte Digital). Criterio: "tiene que
+  corresponder a la profesión". Carnicería=rojo vino/dorado (steakhouse), Kiosco=ámbar,
+  Taller=azul/negro, Jurídico=navy+dorado, Barbería=negro+dorado (masculino),
+  Gym=naranja/negro, Nutrición=verde, Hoteles=piedra+ámbar (emocional).
+- Hero fullscreen con foto real (Unsplash CDN). CTA siempre visible (nav fijo + final).
+- Footer con link "Volver a soportedigital.com.ar" (atribución + autoridad).
+- Datos genéricos: nombre ficticio + WhatsApp placeholder `542200000000`.
+
+### Mockups creados (9, todos live en producción)
+- Studio base: `NegocioDemo.tsx` (comercios) + `HotelDemo.tsx` (hoteles),
+  themeables por paleta. Página `/studio` con grid de 9 vitrinas.
+- Premium a medida: `carniceria-lopez` (steakhouse, fotos de carne + milanesas del
+  usuario mejoradas), `lleras-park-hotel` (emocional, renombrado "Hotel Los Pinares"
+  genérico), `barberia-norte` (negro+dorado masculino).
+- Base themeable: kiosco-centro, taller-mecanico, estudio-juridico, fit-gym,
+  nutricion-saludable, hotel-santa-rosa.
+
+### Imagen cliente
+- `public/descargas/milanesas-lopez.png`: foto de milanesas del usuario, mejorada con
+  PIL (borde amarillo recortado + watermark "Los Arrayanes" borrado). Script en
+  `D:\negocio-ariel\02-productos-digitales-ml\mejorar_milanesas.py`.
+
+### Favicon
+- `src/app/icon.png` = logo SD (quita el favicon de Vercel).
+
+### Fix crítico
+- Footer con `<Link>` + `<a>` anidados rompía el build ("Unexpected token 'main'").
+  Corregido: 3 nodos hermanos (copyright + `<a>` suelto + `<Link>`).
+
+### Commits (orden cronológico)
+- 86d5f99 Studio: 9 mockups premium themeables por rubro
+- 76ffc10 Studio: mockups con imágenes (picsum), sello Demo, hoteles themeables, favicon
+- afed8cd Carnicería steakhouse premium
+- e8e7320 Carnicería milanesas + CTA carne
+- 1a16a7c Lleras Park Hotel emocional
+- 465af77 Hotel nombre genérico Los Pinares
+- 3b7deed Barbería Trade negro+dorado
+- b878bd4 Fix footer "Volver a Soporte Digital" (JSX)
+
+### Documentación
+- Runbook: `D:\negocio-ariel\07-studio-olavarria\RUNBOOK-STUDIO.md`
+- Repo: `docs/12-STUDIO.md` (paletas, IDs Unsplash válidos, lecciones)
+- Plan negocio: `D:\negocio-ariel\07-studio-olavarria\PLAN_STUDIO.md` (actualizado a paleta por rubro)
+
+### Pendiente
+- Subir los 6 mockups "base" al nivel premium (hero fullscreen + fotos reales).
+- Precios + guion de venta en `/studio` (Fase 2 del negocio).
+- Al confirmar cliente: clonar mockup como sitio real en wnpower (hosting recurrente).

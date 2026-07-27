@@ -6,22 +6,20 @@
 ---
 
 ## Estado del proyecto
-**ACTIVO — alineación premium completa.** Todas las 42 rutas están al mismo nivel visual
-que la home (dark #0B0F14, Space Grotesk + Inter, cards dark con hover-elevación, Reveal
-fade-up, WhatsApp flotante, sin overflow horizontal, contraste AA/AAA).
+**ACTIVO.** Sitio principal Soporte Digital: 42 rutas alineadas premium (dark #0B0F14,
+Space Grotesk + Inter, cards dark, WhatsApp flotante, sin overflow). **MÓDULO STUDIO
+ACTIVO:** 9 mockups de comercios live en `/demo/*` como vitrina de venta de diseño web.
 
 ## Sprint actual
-**Sprint 7 — Gobernanza y cierre de brecha premium.** (creación de `/governance`).
+**Sprint 8 — Studio Web (mockups de comercios de Olavarría).**
 
 ## Último Sprint aprobado
-**Sprint 6 — Alineación premium total** (todas las rutas al nivel de la home: cards
-`variant="dark"` + `Reveal` en todas las listas/subpáginas, hitos de Nosotros con punto
-visual, Privacidad sin `prose` inerte). Build 42/42 OK, HTTP 200 en todas las rutas.
+**Sprint 7 — Gobernanza y cierre de brecha premium** (creación de `/governance`).
 
 ## Próximo Sprint (sugerido)
-**Sprint 8 — Pulido y contenido:** horario real en footer (requiere dato del usuario),
-capturas reales del portal cliente Ippon (anonimizadas, con consentimiento) integradas en
-Desarrollo a medida + case study card, y/o imágenes reales en secciones de servicios/casos.
+**Sprint 9 — Subir mockups base a premium + precios:** llevar los 6 mockups "base"
+(kiosco, taller, jurídico, gym, nutrición, santa-rosa) al nivel premium (hero
+fullscreen + fotos reales del rubro), y agregar precios/guion de venta en `/studio`.
 
 ## Documentos LOCKED
 - `docs/04-DESIGN-SYSTEM.md` (fuente de verdad visual).
@@ -32,12 +30,11 @@ Desarrollo a medida + case study card, y/o imágenes reales en secciones de serv
 - Ninguno en este momento.
 
 ## Objetivo actual
-Mantener y profundizar la percepción premium en 100% de las rutas; cerrar pendientes menores
-(horario real, evidencia visual CRM con consentimiento).
+Sitio Soporte Digital premium + módulo Studio (vitrina de mockups de comercios) como
+herramienta de venta de diseño web + hosting recurrente para Olavarría.
 
 ## Próximo objetivo
-Subir aún más la autoridad con evidencia visual real (capturas CRM anonimizadas) y contenido
-(timeline visual de hitos, imágenes en servicios).
+Subir los 6 mockups base a nivel premium y agregar precios/guion de venta en /studio.
 
 ## Riesgos abiertos
 - **Caché de edge en navegadores headless (Browserbase):** al verificar visualmente, el
