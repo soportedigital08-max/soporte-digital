@@ -1,17 +1,25 @@
-import ComercioDemo from "@/components/sections/ComercioDemo";
+import NegocioDemo from "@/components/sections/NegocioDemo";
 
-export const metadata = {
-  title: "Taller Mecánico Ruta 3 — Demo Studio Soporte Digital",
-  description: "Sitio de demostración para taller mecánico.",
+const theme = {
+  bg: "#0a0f1a",
+  surface: "#101826",
+  border: "#1e2d44",
+  text: "#e6edf7",
+  muted: "#9fb2cc",
+  accent: "#0ea5e9",
+  accentText: "#e0f2fe",
+  heroFrom: "#0c4a6e",
+  heroTo: "#0a0f1a",
 };
 
+export const metadata = { title: "Taller Mecánico Ruta 3 — Demo Studio" };
 export default function Page() {
   return (
-    <ComercioDemo
+    <NegocioDemo
       nombre="Taller Mecánico Ruta 3"
       rubro="Taller Mecánico"
       slogan="Mecánica general y preparación. Tu auto en buenas manos."
-      color="#0EA5E9"
+      theme={theme}
       telefono="2284 78 9012"
       whatsapp="542284789012"
       direccion="Ruta 3 km 312, Olavarría"

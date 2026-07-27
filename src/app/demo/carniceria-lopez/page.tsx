@@ -1,17 +1,25 @@
-import ComercioDemo from "@/components/sections/ComercioDemo";
+import NegocioDemo from "@/components/sections/NegocioDemo";
 
-export const metadata = {
-  title: "Carnicería López — Demo Studio Soporte Digital",
-  description: "Sitio de demostración para carnicería.",
+const theme = {
+  bg: "#1a0e0c",
+  surface: "#241513",
+  border: "#3a2018",
+  text: "#f5e9e6",
+  muted: "#c9a89f",
+  accent: "#e11d48",
+  accentText: "#ffe9e0",
+  heroFrom: "#7f1d1d",
+  heroTo: "#1a0e0c",
 };
 
+export const metadata = { title: "Carnicería López — Demo Studio" };
 export default function Page() {
   return (
-    <ComercioDemo
+    <NegocioDemo
       nombre="Carnicería López"
       rubro="Carnicería"
       slogan="Cortes frescos todos los días, directo de la tranquera a tu mesa."
-      color="#E11D48"
+      theme={theme}
       telefono="2284 45 6789"
       whatsapp="542284456789"
       direccion="Av. San Martín 234, Olavarría"

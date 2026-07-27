@@ -1,17 +1,25 @@
-import ComercioDemo from "@/components/sections/ComercioDemo";
+import NegocioDemo from "@/components/sections/NegocioDemo";
 
-export const metadata = {
-  title: "Kiosco Centro — Demo Studio Soporte Digital",
-  description: "Sitio de demostración para kiosco/diario.",
+const theme = {
+  bg: "#1c1407",
+  surface: "#271c0c",
+  border: "#3d2d12",
+  text: "#f7efdc",
+  muted: "#cdbb8f",
+  accent: "#f59e0b",
+  accentText: "#fff6e0",
+  heroFrom: "#92400e",
+  heroTo: "#1c1407",
 };
 
+export const metadata = { title: "Kiosco Centro — Demo Studio" };
 export default function Page() {
   return (
-    <ComercioDemo
+    <NegocioDemo
       nombre="Kiosco Centro"
       rubro="Kiosco y Diario"
       slogan="Lo que necesitás, a la vuelta de tu casa, a cualquier hora."
-      color="#F59E0B"
+      theme={theme}
       telefono="2284 12 3456"
       whatsapp="542284123456"
       direccion="Calle Belgrano 89, Olavarría"

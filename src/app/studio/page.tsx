@@ -1,36 +1,15 @@
 import Link from "next/link";
 
 const DEMOS = [
-  {
-    nombre: "Carnicería López",
-    rubro: "Carnicería",
-    href: "/demo/carniceria-lopez",
-    color: "#E11D48",
-  },
-  {
-    nombre: "Kiosco Centro",
-    rubro: "Kiosco y Diario",
-    href: "/demo/kiosco-centro",
-    color: "#F59E0B",
-  },
-  {
-    nombre: "Taller Mecánico Ruta 3",
-    rubro: "Taller Mecánico",
-    href: "/demo/taller-mecanico",
-    color: "#0EA5E9",
-  },
-  {
-    nombre: "Lleras Park Hotel",
-    rubro: "Hotel Boutique",
-    href: "/demo/lleras-park-hotel",
-    color: "#0EA5E9",
-  },
-  {
-    nombre: "Hotel Santa Rosa",
-    rubro: "Hotel · Cafe · Spa",
-    href: "/demo/hotel-santa-rosa",
-    color: "#E11D48",
-  },
+  { nombre: "Carnicería López", rubro: "Carnicería", href: "/demo/carniceria-lopez", color: "#e11d48" },
+  { nombre: "Kiosco Centro", rubro: "Kiosco y Diario", href: "/demo/kiosco-centro", color: "#f59e0b" },
+  { nombre: "Taller Mecánico Ruta 3", rubro: "Taller Mecánico", href: "/demo/taller-mecanico", color: "#0ea5e9" },
+  { nombre: "Estudio Jurídico Díaz", rubro: "Estudio Jurídico", href: "/demo/estudio-juridico", color: "#d4af37" },
+  { nombre: "Barbería Norte", rubro: "Barbería", href: "/demo/barberia-norte", color: "#c9a227" },
+  { nombre: "Fit Gym", rubro: "Gimnasio · Musculación", href: "/demo/fit-gym", color: "#f97316" },
+  { nombre: "Nutrición Saludable", rubro: "Nutricionista", href: "/demo/nutricion-saludable", color: "#22c55e" },
+  { nombre: "Lleras Park Hotel", rubro: "Hotel Boutique", href: "/demo/lleras-park-hotel", color: "#0ea5e9" },
+  { nombre: "Hotel Santa Rosa", rubro: "Hotel · Cafe · Spa", href: "/demo/hotel-santa-rosa", color: "#e11d48" },
 ];
 
 export const metadata = {
