@@ -1,4 +1,5 @@
 import HotelDemo from "@/components/sections/HotelDemo";
+import VolverSD from "@/components/sections/VolverSD";
 
 export const metadata = {
   title: "Hotel Santa Rosa — Demo Studio Soporte Digital",
@@ -7,7 +8,9 @@ export const metadata = {
 
 export default function Page() {
   return (
-    <HotelDemo
+    <>
+      <VolverSD />
+      <HotelDemo
       nombre="Hotel Santa Rosa"
       slogan="Un clásico de Olavarría, ahora con la web que se merece."
       theme={{
@@ -41,5 +44,6 @@ export default function Page() {
       ]}
       galeria={["Lobby", "Habitación", "Cafe Racer", "Liv Gym", "Spa", "Recepcion", "Suite", "Desayuno"]}
     />
+    </>
   );
 }

@@ -1,4 +1,5 @@
 import NegocioDemo from "@/components/sections/NegocioDemo";
+import VolverSD from "@/components/sections/VolverSD";
 
 const theme = {
   bg: "#140d08",
@@ -14,7 +15,9 @@ const theme = {
 export const metadata = { title: "Fit Gym Olavarría — Demo Studio" };
 export default function Page() {
   return (
-    <NegocioDemo
+    <>
+      <VolverSD />
+      <NegocioDemo
       nombre="Fit Gym"
       rubro="Gimnasio · Musculación"
       slogan="Entrená fuerte, sentite mejor. Para todos los niveles."
@@ -32,5 +35,6 @@ export default function Page() {
       ]}
       sobre="Gimnasio de Olavarría con 8 años acompañando a la gente a estar en forma. Sea tu primer día o el milésimo, te recibimos igual."
     />
+    </>
   );
 }

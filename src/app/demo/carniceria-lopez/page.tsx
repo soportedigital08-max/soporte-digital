@@ -1,4 +1,5 @@
 import Link from "next/link";
+import VolverSD from "@/components/sections/VolverSD";
 
 // Landing premium dark editorial para Carnicería López (estilo steakhouse).
 // Construible en Next.js + Tailwind. Fotos reales de carne (Unsplash).
@@ -29,6 +30,7 @@ export const metadata = {
 export default function Page() {
   return (
     <main className="bg-neutral-950 text-neutral-100 font-sans antialiased">
+      <VolverSD />
       {/* NAV fija con CTA siempre visible */}
       <header className="sticky top-0 z-50 bg-neutral-950/80 backdrop-blur border-b border-neutral-800">
         <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">

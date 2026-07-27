@@ -11,7 +11,6 @@ const NAV_ITEMS = [
   { label: "Casos de Éxito", href: "/casos-de-exito" },
   { label: "Conocimiento", href: "/conocimiento" },
   { label: "Tienda", href: "/tienda/no-caigas" },
-  { label: "Studio", href: "/studio" },
   { label: "Nosotros", href: "/nosotros" },
   { label: "Contacto", href: "/contacto" },
 ];

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import VolverSD from "@/components/sections/VolverSD";
 
 // Landing premium emocional para Hotel Los Pinares Boutique (Olavarría).
 // Hero fullscreen inmersivo, CTA "Reservar" fijo, storytelling visual.
@@ -28,6 +29,7 @@ export const metadata = {
 export default function Page() {
   return (
     <main className="bg-stone-950 text-stone-100 font-sans antialiased">
+      <VolverSD />
       {/* NAV fija con CTA Reservar siempre visible */}
       <header className="fixed top-0 inset-x-0 z-50 bg-stone-950/70 backdrop-blur border-b border-stone-800">
         <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">

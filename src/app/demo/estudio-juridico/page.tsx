@@ -1,4 +1,5 @@
 import NegocioDemo from "@/components/sections/NegocioDemo";
+import VolverSD from "@/components/sections/VolverSD";
 
 const theme = {
   bg: "#0b1020",
@@ -14,7 +15,9 @@ const theme = {
 export const metadata = { title: "Estudio Jurídico — Demo Studio" };
 export default function Page() {
   return (
-    <NegocioDemo
+    <>
+      <VolverSD />
+      <NegocioDemo
       nombre="Estudio Jurídico Díaz"
       rubro="Estudio Jurídico"
       slogan="Acompañamiento legal claro y cercano, para personas y familias."
@@ -32,5 +35,6 @@ export default function Page() {
       ]}
       sobre="Estudio con 12 años en Olavarría. Creemos que el derecho tiene que explicarse en lenguaje claro, no en tecnicismos. Te acompañamos en cada paso."
     />
+    </>
   );
 }

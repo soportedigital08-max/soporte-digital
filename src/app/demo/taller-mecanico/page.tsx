@@ -1,4 +1,5 @@
 import NegocioDemo from "@/components/sections/NegocioDemo";
+import VolverSD from "@/components/sections/VolverSD";
 
 const theme = {
   bg: "#0a0f1a",
@@ -14,7 +15,9 @@ const theme = {
 export const metadata = { title: "Taller Mecánico Ruta 3 — Demo Studio" };
 export default function Page() {
   return (
-    <NegocioDemo
+    <>
+      <VolverSD />
+      <NegocioDemo
       nombre="Taller Mecánico Ruta 3"
       rubro="Taller Mecánico"
       slogan="Mecánica general y preparación. Tu auto en buenas manos."
@@ -32,5 +35,6 @@ export default function Page() {
       ]}
       sobre="Taller familiar con 15 años en Olavarría. Trabajamos con transparencia: te mostramos qué se hace y por qué, antes de arrancar."
     />
+    </>
   );
 }

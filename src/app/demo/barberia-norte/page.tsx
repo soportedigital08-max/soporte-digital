@@ -1,4 +1,5 @@
 import Link from "next/link";
+import VolverSD from "@/components/sections/VolverSD";
 
 // Landing masculino moderna para Barbería Trade (estilo estatus, confianza).
 // Paleta: negro + dorado / blanco. Fotos reales del local.
@@ -28,6 +29,7 @@ export const metadata = {
 export default function Page() {
   return (
     <main className="bg-black text-white font-sans antialiased">
+      <VolverSD />
       {/* NAV fija con CTA Reservar siempre visible */}
       <header className="fixed top-0 inset-x-0 z-50 bg-black/80 backdrop-blur border-b border-gray-800">
         <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">

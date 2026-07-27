@@ -1,4 +1,5 @@
 import NegocioDemo from "@/components/sections/NegocioDemo";
+import VolverSD from "@/components/sections/VolverSD";
 
 const theme = {
   bg: "#1c1407",
@@ -14,7 +15,9 @@ const theme = {
 export const metadata = { title: "Kiosco Centro — Demo Studio" };
 export default function Page() {
   return (
-    <NegocioDemo
+    <>
+      <VolverSD />
+      <NegocioDemo
       nombre="Kiosco Centro"
       rubro="Kiosco y Diario"
       slogan="Lo que necesitás, a la vuelta de tu casa, a cualquier hora."
@@ -32,5 +35,6 @@ export default function Page() {
       ]}
       sobre="Kiosco de barrio desde 2010. Nos conocés por la atención de siempre y porque nunca nos falta lo que buscás."
     />
+    </>
   );
 }

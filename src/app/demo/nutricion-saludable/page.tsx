@@ -1,4 +1,5 @@
 import NegocioDemo from "@/components/sections/NegocioDemo";
+import VolverSD from "@/components/sections/VolverSD";
 
 const theme = {
   bg: "#0a140e",
@@ -14,7 +15,9 @@ const theme = {
 export const metadata = { title: "Nutrición Saludable — Demo Studio" };
 export default function Page() {
   return (
-    <NegocioDemo
+    <>
+      <VolverSD />
+      <NegocioDemo
       nombre="Nutrición Saludable"
       rubro="Nutricionista"
       slogan="Comé mejor, sin dietas locas. Planes reales para tu vida."
@@ -32,5 +35,6 @@ export default function Page() {
       ]}
       sobre="Nutricionista con enfoque en hábitos, no en promesas mágicas. Te ayudo a comer bien sin volver loca tu rutina."
     />
+    </>
   );
 }
