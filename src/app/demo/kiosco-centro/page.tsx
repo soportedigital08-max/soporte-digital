@@ -8,8 +8,7 @@ const theme = {
   muted: "#cdbb8f",
   accent: "#f59e0b",
   accentText: "#fff6e0",
-  heroFrom: "#92400e",
-  heroTo: "#1c1407",
+  overlay: "#92400e",
 };
 
 export const metadata = { title: "Kiosco Centro — Demo Studio" };
@@ -20,6 +19,7 @@ export default function Page() {
       rubro="Kiosco y Diario"
       slogan="Lo que necesitás, a la vuelta de tu casa, a cualquier hora."
       theme={theme}
+      seed="kiosco-diario"
       telefono="2284 12 3456"
       whatsapp="542284123456"
       direccion="Calle Belgrano 89, Olavarría"

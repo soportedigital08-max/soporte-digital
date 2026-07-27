@@ -8,8 +8,7 @@ const theme = {
   muted: "#cbb29c",
   accent: "#f97316",
   accentText: "#fff1e6",
-  heroFrom: "#9a3412",
-  heroTo: "#140d08",
+  overlay: "#9a3412",
 };
 
 export const metadata = { title: "Fit Gym Olavarría — Demo Studio" };
@@ -20,6 +19,7 @@ export default function Page() {
       rubro="Gimnasio · Musculación"
       slogan="Entrená fuerte, sentite mejor. Para todos los niveles."
       theme={theme}
+      seed="gimnasio-fit"
       telefono="2284 66 7777"
       whatsapp="542284667777"
       direccion="Av. Pellegrini 120, Olavarría"

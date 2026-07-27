@@ -10,8 +10,18 @@ export default function Page() {
     <HotelDemo
       nombre="Lleras Park Hotel"
       slogan="Un nuevo concepto en hotelería boutique en Olavarría."
-      color="#0EA5E9"
+      theme={{
+        bg: "#0a0f1a",
+        surface: "#101826",
+        border: "#1e2d44",
+        text: "#e6edf7",
+        muted: "#9fb2cc",
+        accent: "#0ea5e9",
+        accentText: "#e0f2fe",
+        overlay: "#0c4a6e",
+      }}
       telefono="2284 460590"
+      seed="lleras-park-hotel"
       whatsapp="542284460590"
       email="info@llerasparkhotel.com"
       direccion="Ruta 226 (Km 297) esq. España, Olavarría"

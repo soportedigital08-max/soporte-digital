@@ -1,7 +1,7 @@
 // src/components/sections/NegocioDemo.tsx
 // Plantilla de mockup PREMIUM y themeable para sitios de comercios/servicios.
-// Cada negocio define su propia paleta (theme) para que el diseño corresponda
-// a su rubro, no al de Soporte Digital. Usado en /demo/[slug].
+// Hero con imagen real (picsum por seed de rubro), tarjetas con foto,
+// sello "Demo · Soporte Digital". Cada negocio define su paleta.
 
 export interface NegocioTheme {
   bg: string;
@@ -11,8 +11,7 @@ export interface NegocioTheme {
   muted: string;
   accent: string;
   accentText: string;
-  heroFrom: string;
-  heroTo: string;
+  overlay: string; // color de overlay sobre la foto del hero (paleta rubro)
 }
 
 interface NegocioDemoProps {
@@ -20,6 +19,7 @@ interface NegocioDemoProps {
   rubro: string;
   slogan: string;
   theme: NegocioTheme;
+  seed: string; // picsum seed para foto estable del rubro
   telefono: string;
   whatsapp: string;
   direccion: string;
@@ -33,6 +33,7 @@ export default function NegocioDemo({
   rubro,
   slogan,
   theme,
+  seed,
   telefono,
   whatsapp,
   direccion,
@@ -40,33 +41,52 @@ export default function NegocioDemo({
   servicios,
   sobre,
 }: NegocioDemoProps) {
+  const heroImg = `https://picsum.photos/seed/${seed}/1600/900`;
   return (
     <main style={{ background: theme.bg, color: theme.text, minHeight: "100vh" }}>
-      {/* HERO con paleta del rubro */}
-      <section style={{ position: "relative", overflow: "hidden" }}>
-        <div
+      {/* HERO con foto real + overlay de paleta */}
+      <section style={{ position: "relative", overflow: "hidden", minHeight: 460 }}>
+        <img
+          src={heroImg}
+          alt={nombre}
           style={{
             position: "absolute",
             inset: 0,
-            background: `linear-gradient(135deg, ${theme.heroFrom} 0%, ${theme.heroTo} 100%)`,
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
           }}
         />
         <div
           style={{
             position: "absolute",
             inset: 0,
-            opacity: 0.08,
-            backgroundImage:
-              "radial-gradient(rgba(255,255,255,0.8) 1px, transparent 1px)",
-            backgroundSize: "22px 22px",
+            background: `linear-gradient(180deg, ${theme.overlay}cc 0%, ${theme.overlay}f0 55%, ${theme.bg} 100%)`,
           }}
         />
+        {/* Sello Demo */}
+        <div
+          style={{
+            position: "absolute",
+            top: 18,
+            right: 18,
+            background: "rgba(0,0,0,0.55)",
+            color: "#fff",
+            fontSize: 12,
+            padding: "6px 12px",
+            borderRadius: 999,
+            border: "1px solid rgba(255,255,255,0.3)",
+            backdropFilter: "blur(4px)",
+          }}
+        >
+          Demo · Soporte Digital
+        </div>
         <div
           style={{
             position: "relative",
             maxWidth: 880,
             margin: "0 auto",
-            padding: "96px 24px 72px",
+            padding: "120px 24px 72px",
             textAlign: "center",
           }}
         >
@@ -76,7 +96,7 @@ export default function NegocioDemo({
               letterSpacing: 2,
               textTransform: "uppercase",
               color: theme.accentText,
-              opacity: 0.9,
+              opacity: 0.95,
               marginBottom: 12,
             }}
           >
@@ -84,11 +104,12 @@ export default function NegocioDemo({
           </p>
           <h1
             style={{
-              fontSize: "clamp(34px, 6vw, 56px)",
+              fontSize: "clamp(36px, 6.5vw, 60px)",
               fontWeight: 800,
               lineHeight: 1.05,
               color: theme.accentText,
               margin: 0,
+              textShadow: "0 2px 18px rgba(0,0,0,0.4)",
             }}
           >
             {nombre}
@@ -97,11 +118,12 @@ export default function NegocioDemo({
             style={{
               fontSize: 19,
               color: theme.accentText,
-              opacity: 0.92,
+              opacity: 0.95,
               marginTop: 16,
               maxWidth: 620,
               marginLeft: "auto",
               marginRight: "auto",
+              textShadow: "0 1px 10px rgba(0,0,0,0.4)",
             }}
           >
             {slogan}
@@ -121,7 +143,7 @@ export default function NegocioDemo({
               rel="noopener noreferrer"
               style={{
                 background: theme.accentText,
-                color: theme.heroFrom,
+                color: theme.overlay,
                 padding: "14px 28px",
                 borderRadius: 10,
                 fontWeight: 700,
@@ -134,7 +156,7 @@ export default function NegocioDemo({
             <a
               href={`tel:${telefono.replace(/\s/g, "")}`}
               style={{
-                background: "transparent",
+                background: "rgba(255,255,255,0.12)",
                 color: theme.accentText,
                 padding: "14px 28px",
                 borderRadius: 10,
@@ -142,6 +164,7 @@ export default function NegocioDemo({
                 textDecoration: "none",
                 fontWeight: 600,
                 fontSize: 16,
+                backdropFilter: "blur(4px)",
               }}
             >
               Llamar
@@ -151,15 +174,9 @@ export default function NegocioDemo({
       </section>
 
       <div style={{ maxWidth: 920, margin: "0 auto", padding: "0 24px 96px" }}>
-        {/* Servicios */}
+        {/* Servicios con foto */}
         <section style={{ paddingTop: 64 }}>
-          <h2
-            style={{
-              fontSize: 28,
-              fontWeight: 700,
-              margin: "0 0 24px",
-            }}
-          >
+          <h2 style={{ fontSize: 28, fontWeight: 700, margin: "0 0 24px" }}>
             Qué ofrecemos
           </h2>
           <div
@@ -175,25 +192,33 @@ export default function NegocioDemo({
                 style={{
                   background: theme.surface,
                   border: `1px solid ${theme.border}`,
-                  borderRadius: 14,
-                  padding: 22,
+                  borderRadius: 16,
+                  overflow: "hidden",
+                  boxShadow: "0 10px 30px rgba(0,0,0,0.25)",
                 }}
               >
-                <div
-                  style={{
-                    width: 8,
-                    height: 8,
-                    borderRadius: 999,
-                    background: theme.accent,
-                    marginBottom: 12,
-                  }}
+                <img
+                  src={`https://picsum.photos/seed/${seed}-${i}/600/340`}
+                  alt={s.titulo}
+                  style={{ width: "100%", height: 160, objectFit: "cover" }}
                 />
-                <h3 style={{ fontSize: 18, fontWeight: 700, margin: "0 0 6px" }}>
-                  {s.titulo}
-                </h3>
-                <p style={{ fontSize: 15, color: theme.muted, margin: 0, lineHeight: 1.5 }}>
-                  {s.desc}
-                </p>
+                <div style={{ padding: 20 }}>
+                  <div
+                    style={{
+                      width: 8,
+                      height: 8,
+                      borderRadius: 999,
+                      background: theme.accent,
+                      marginBottom: 10,
+                    }}
+                  />
+                  <h3 style={{ fontSize: 18, fontWeight: 700, margin: "0 0 6px" }}>
+                    {s.titulo}
+                  </h3>
+                  <p style={{ fontSize: 15, color: theme.muted, margin: 0, lineHeight: 1.5 }}>
+                    {s.desc}
+                  </p>
+                </div>
               </div>
             ))}
           </div>
@@ -218,10 +243,11 @@ export default function NegocioDemo({
             style={{
               background: theme.surface,
               border: `1px solid ${theme.border}`,
-              borderRadius: 14,
+              borderRadius: 16,
               padding: 24,
               display: "grid",
               gap: 8,
+              boxShadow: "0 10px 30px rgba(0,0,0,0.2)",
             }}
           >
             <p style={{ margin: 0, fontSize: 15 }}>
@@ -253,11 +279,7 @@ export default function NegocioDemo({
           </p>
           <a
             href="/studio"
-            style={{
-              color: theme.accent,
-              textDecoration: "underline",
-              fontSize: 16,
-            }}
+            style={{ color: theme.accent, textDecoration: "underline", fontSize: 16 }}
           >
             ¿Querés un sitio así para tu comercio? Conocé el Studio →
           </a>

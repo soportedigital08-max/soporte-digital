@@ -8,8 +8,7 @@ const theme = {
   muted: "#c9a89f",
   accent: "#e11d48",
   accentText: "#ffe9e0",
-  heroFrom: "#7f1d1d",
-  heroTo: "#1a0e0c",
+  overlay: "#7f1d1d",
 };
 
 export const metadata = { title: "Carnicería López — Demo Studio" };
@@ -20,6 +19,7 @@ export default function Page() {
       rubro="Carnicería"
       slogan="Cortes frescos todos los días, directo de la tranquera a tu mesa."
       theme={theme}
+      seed="carniceria-carne"
       telefono="2284 45 6789"
       whatsapp="542284456789"
       direccion="Av. San Martín 234, Olavarría"

@@ -10,8 +10,18 @@ export default function Page() {
     <HotelDemo
       nombre="Hotel Santa Rosa"
       slogan="Un clásico de Olavarría, ahora con la web que se merece."
-      color="#E11D48"
+      theme={{
+        bg: "#1a0e0c",
+        surface: "#241513",
+        border: "#3a2018",
+        text: "#f5e9e6",
+        muted: "#c9a89f",
+        accent: "#e11d48",
+        accentText: "#ffe9e0",
+        overlay: "#7f1d1d",
+      }}
       telefono="2284 42 0000"
+      seed="hotel-santa-rosa"
       whatsapp="542284420000"
       email="info@hotelsantarosa.com"
       direccion="Olavarría, Buenos Aires"

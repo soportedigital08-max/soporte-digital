@@ -8,8 +8,7 @@ const theme = {
   muted: "#9fb2cc",
   accent: "#0ea5e9",
   accentText: "#e0f2fe",
-  heroFrom: "#0c4a6e",
-  heroTo: "#0a0f1a",
+  overlay: "#0c4a6e",
 };
 
 export const metadata = { title: "Taller Mecánico Ruta 3 — Demo Studio" };
@@ -20,6 +19,7 @@ export default function Page() {
       rubro="Taller Mecánico"
       slogan="Mecánica general y preparación. Tu auto en buenas manos."
       theme={theme}
+      seed="taller-auto"
       telefono="2284 78 9012"
       whatsapp="542284789012"
       direccion="Ruta 3 km 312, Olavarría"

@@ -8,8 +8,7 @@ const theme = {
   muted: "#b3b3b3",
   accent: "#c9a227",
   accentText: "#f3e6b8",
-  heroFrom: "#1a1a1a",
-  heroTo: "#0c0c0c",
+  overlay: "#1a1a1a",
 };
 
 export const metadata = { title: "Barbería Norte — Demo Studio" };
@@ -20,6 +19,7 @@ export default function Page() {
       rubro="Barbería"
       slogan="Corte clásico y barba prolija. El lugar para estar bien arriba."
       theme={theme}
+      seed="barberia-barba"
       telefono="2284 33 9090"
       whatsapp="542284339090"
       direccion="Calle Moreno 77, Olavarría"

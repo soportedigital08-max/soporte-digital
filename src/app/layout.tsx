@@ -20,6 +20,9 @@ export const metadata: Metadata = {
   title: "Soporte Digital — Tecnología que funciona. Soluciones que perduran.",
   description:
     "Soluciones tecnológicas claras y confiables para personas, profesionales y empresas. Resolvemos problemas reales de tecnología en Olavarría y toda Argentina.",
+  icons: {
+    icon: "/icon.png",
+  },
 };
 
 export default function RootLayout({

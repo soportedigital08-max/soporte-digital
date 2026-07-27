@@ -8,8 +8,7 @@ const theme = {
   muted: "#a6c9b3",
   accent: "#22c55e",
   accentText: "#e7fbee",
-  heroFrom: "#14532d",
-  heroTo: "#0a140e",
+  overlay: "#14532d",
 };
 
 export const metadata = { title: "Nutrición Saludable — Demo Studio" };
@@ -20,6 +19,7 @@ export default function Page() {
       rubro="Nutricionista"
       slogan="Comé mejor, sin dietas locas. Planes reales para tu vida."
       theme={theme}
+      seed="nutricion-salud"
       telefono="2284 44 3322"
       whatsapp="542284443322"
       direccion="Consultorio virtual y presencial, Olavarría"
