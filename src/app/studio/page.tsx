@@ -19,6 +19,18 @@ const DEMOS = [
     href: "/demo/taller-mecanico",
     color: "#0EA5E9",
   },
+  {
+    nombre: "Lleras Park Hotel",
+    rubro: "Hotel Boutique",
+    href: "/demo/lleras-park-hotel",
+    color: "#0EA5E9",
+  },
+  {
+    nombre: "Hotel Santa Rosa",
+    rubro: "Hotel · Cafe · Spa",
+    href: "/demo/hotel-santa-rosa",
+    color: "#E11D48",
+  },
 ];
 
 export const metadata = {

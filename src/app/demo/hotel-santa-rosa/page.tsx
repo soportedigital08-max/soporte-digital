@@ -1,0 +1,35 @@
+import HotelDemo from "@/components/sections/HotelDemo";
+
+export const metadata = {
+  title: "Hotel Santa Rosa — Demo Studio Soporte Digital",
+  description: "Mockup de rediseño para Hotel Santa Rosa, Olavarría.",
+};
+
+export default function Page() {
+  return (
+    <HotelDemo
+      nombre="Hotel Santa Rosa"
+      slogan="Un clásico de Olavarría, ahora con la web que se merece."
+      color="#E11D48"
+      telefono="2284 42 0000"
+      whatsapp="542284420000"
+      email="info@hotelsantarosa.com"
+      direccion="Olavarría, Buenos Aires"
+      hero="Hotel Santa Rosa es uno de los hoteles más prestigiosos de Olavarría, con tres propuestas bajo un mismo techo: el Hotel, el Cafe Racer y el Liv Gym & Spa. Una web cálida y clara para que quien busca, se quede."
+      servicios={[
+        { titulo: "Hotel", desc: "Habitaciones cómodas para descansar y volver." },
+        { titulo: "Cafe Racer", desc: "Cafetería con personalidad, para el día a día." },
+        { titulo: "Liv Gym & Spa", desc: "Gimnasio y spa para cuidarte durante tu estadía." },
+        { titulo: "Eventos", desc: "Espacios para reuniones y celebraciones." },
+        { titulo: "Reservas online", desc: "Reservá en segundos, sin llamar." },
+        { titulo: "Ubicación central", desc: "En el corazón de Olavarría." },
+      ]}
+      habitaciones={[
+        { nombre: "Preferencial", desc: "Habitación con detalles premium y comodidad." },
+        { nombre: "Suite", desc: "Más amplitud y servicios para una estadía completa." },
+        { nombre: "Departamento", desc: "Ideal para estadías largas, con cocina." },
+      ]}
+      galeria={["Lobby", "Habitación", "Cafe Racer", "Liv Gym", "Spa", "Recepcion", "Suite", "Desayuno"]}
+    />
+  );
+}
