@@ -6,20 +6,18 @@
 ---
 
 ## Estado del proyecto
-**ACTIVO.** Sitio principal Soporte Digital: 42 rutas alineadas premium (dark #0B0F14,
-Space Grotesk + Inter, cards dark, WhatsApp flotante, sin overflow). **MÓDULO STUDIO
-ACTIVO:** 9 mockups de comercios live en `/demo/*` como vitrina de venta de diseño web.
+**ACTIVO.** Sitio principal Soporte Digital 100% (42 rutas premium, favicon SD, horario
+real en footer, Vercel Analytics activado). MÓDULO STUDIO: 9 mockups live en `/demo/*`
+(3 premium + 6 base); link Studio sacado del menú hasta madurar. Ebooks: 2 de 5 hechos.
 
 ## Sprint actual
-**Sprint 8 — Studio Web (mockups de comercios de Olavarría).**
+**Sprint 9 — Ebooks #3/#4/#5 (C) + Studio pendiente (B).**
 
 ## Último Sprint aprobado
-**Sprint 7 — Gobernanza y cierre de brecha premium** (creación de `/governance`).
+**Sprint 8 — Studio Web (mockups) + cierre A (sitio).**
 
 ## Próximo Sprint (sugerido)
-**Sprint 9 — Subir mockups base a premium + precios:** llevar los 6 mockups "base"
-(kiosco, taller, jurídico, gym, nutrición, santa-rosa) al nivel premium (hero
-fullscreen + fotos reales del rubro), y agregar precios/guion de venta en `/studio`.
+**Sprint 10 — B (Studio): subir 6 mockups base a premium + precios/guion en /studio.**
 
 ## Documentos LOCKED
 - `docs/04-DESIGN-SYSTEM.md` (fuente de verdad visual).
