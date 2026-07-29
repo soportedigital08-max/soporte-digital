@@ -28,6 +28,14 @@ const PRODUCTOS: Producto[] = [
     precio: "$1.998 ARS",
     portada: "/descargas/portada-backup.png",
   },
+  {
+    slug: "whatsapp",
+    titulo: "WHATSAPP SEGURO",
+    resumen:
+      "Verificación en dos pasos, clonado y estafas por el celular. Guía práctica para no regalar tu número ni tu plata.",
+    precio: "$1.998 ARS",
+    portada: "/descargas/portada-whatsapp.png",
+  },
 ];
 
 export default function CatalogoTienda() {
