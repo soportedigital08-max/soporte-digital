@@ -70,8 +70,13 @@ export default function TiendaWhatsapp() {
 
       <div className="container max-w-4xl mx-auto pb-20 px-4">
         <div className="grid md:grid-cols-2 gap-8 items-start">
-          <div className="rounded-card overflow-hidden border border-white/10 shadow-premium bg-ink-800 flex items-center justify-center aspect-[3/4]">
-            <p className="text-body text-primary-100">Portada próximamente</p>
+          <div className="rounded-card overflow-hidden border border-white/10 shadow-premium">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/descargas/portada-whatsapp.png"
+              alt="Portada WHATSAPP SEGURO"
+              className="w-full h-auto"
+            />
           </div>
 
           <div className="flex flex-col">
