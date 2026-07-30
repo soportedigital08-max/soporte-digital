@@ -36,6 +36,14 @@ const PRODUCTOS: Producto[] = [
     precio: "$1.998 ARS",
     portada: "/descargas/portada-whatsapp.png",
   },
+  {
+    slug: "camaras",
+    titulo: "CÁMARAS Y SEGURIDAD EN EL HOGAR",
+    resumen:
+      "Dónde ponerlas, qué comprar y cómo no exponerte. Guía práctica para cuidar tu casa sin ser experto.",
+    precio: "$1.998 ARS",
+    portada: "/descargas/portada-camaras.png",
+  },
 ];
 
 export default function CatalogoTienda() {
