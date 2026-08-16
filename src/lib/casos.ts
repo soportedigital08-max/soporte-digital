@@ -89,6 +89,18 @@ export const CASOS: Caso[] = [
       "El dojo tiene su CRM propio: cobros bajo control, asistencia registrada y los socios gestionando sus clases desde el celular. Todo en su dominio.",
     area: "Desarrollo web",
   },
+  {
+    slug: "dr-bongo-bong",
+    titulo: "Dr Bongo Bong: medio de cultura alojado y desarrollado por nosotros",
+    resumen: "Sitio de notas, radio y cultura de Olavarría, alojado en nuestro hosting.",
+    situacion:
+      "Dr Bongo Bong es un medio de cultura, música y radio de Olavarría que necesitaba un sitio estable, rápido y siempre disponible para publicar notas y transmitir en vivo.",
+    solucion:
+      "Desarrollamos y alojamos el sitio en nuestra infraestructura de hosting, con respaldo y monitoreo para mantenerlo online y fluido ante el tráfico de cada nota.",
+    resultado:
+      "El medio publica y transmite sin preocuparse por la tecnología: el sitio corre en nuestro hosting con respaldo y monitoreo. // Métricas reales (uptime, carga, visitas/mes) pendientes de completar por el cliente.",
+    area: "Hosting",
+  },
 ];
 
 export function getCaso(slug: string): Caso | undefined {
