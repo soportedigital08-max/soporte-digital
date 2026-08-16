@@ -7,6 +7,16 @@ import PageHeader from "@/components/sections/PageHeader";
 import Reveal from "@/components/ui/Reveal";
 import { ARTICULOS } from "@/lib/articulos";
 
+// Fecha legible en español (AR) a partir de ISO YYYY-MM-DD.
+function formatoFecha(iso: string) {
+  const d = new Date(`${iso}T00:00:00`);
+  return d.toLocaleDateString("es-AR", {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  });
+}
+
 export const metadata: Metadata = {
   title: "Conocimiento — Soporte Digital",
   description:
@@ -32,6 +42,7 @@ export default function ConocimientoPage() {
                   description={a.extracto}
                   href={`/conocimiento/${a.slug}`}
                   variant="dark"
+                  meta={`${formatoFecha(a.fecha)} · ${a.lectura} min de lectura`}
                 />
               </Reveal>
             ))}

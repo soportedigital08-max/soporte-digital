@@ -6,6 +6,7 @@ interface CardProps {
   description: string;
   href: string;
   icon?: ReactNode;
+  meta?: string; // texto pequeño bajo la descripción (ej: fecha · lectura)
   variant?: "light" | "dark";
 }
 
@@ -16,6 +17,7 @@ export default function Card({
   description,
   href,
   icon,
+  meta,
   variant = "light",
 }: CardProps) {
   if (variant === "dark") {
@@ -31,6 +33,7 @@ export default function Card({
         )}
         <h3 className="text-h4 text-white">{title}</h3>
         <p className="text-body text-primary-100 mt-2">{description}</p>
+        {meta && <p className="text-small text-primary-300 mt-3">{meta}</p>}
       </Link>
     );
   }
@@ -49,6 +52,7 @@ export default function Card({
         {title}
       </h3>
       <p className="text-body text-gray-600 mt-2">{description}</p>
+      {meta && <p className="text-small text-gray-500 mt-3">{meta}</p>}
     </Link>
   );
 }

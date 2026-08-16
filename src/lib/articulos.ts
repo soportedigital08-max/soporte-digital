@@ -11,7 +11,8 @@ export interface Articulo {
   titulo: string;
   extracto: string;
   categoria: string;
-  fecha: string; // ISO
+  fecha: string; // ISO (YYYY-MM-DD)
+  autor: string; // autor del artículo (Fase 1.3)
   lectura: number; // minutos
   bloques: Bloque[];
 }
@@ -24,6 +25,7 @@ export const ARTICULOS: Articulo[] = [
       "Si tu computadora tarda en encender y se traba, no siempre hace falta comprar una nueva. Empezá por acá.",
     categoria: "Servicio técnico",
     fecha: "2026-07-18",
+    autor: "Equipo Soporte Digital",
     lectura: 4,
     bloques: [
       { tipo: "p", texto: "Una PC lenta es la queja más frecuente que atendemos en Olavarría. Antes de gastar en hardware, conviene entender qué pasa." },
@@ -47,6 +49,7 @@ export const ARTICULOS: Articulo[] = [
       "Vacíos de señal y videos cortados suelen tener solución simple. Te contamos por dónde arrancar.",
     categoria: "Redes y WiFi",
     fecha: "2026-07-18",
+    autor: "Equipo Soporte Digital",
     lectura: 3,
     bloques: [
       { tipo: "p", texto: "El WiFi no es solo el router: es dónde lo ponés y cómo está configurado." },
@@ -67,6 +70,7 @@ export const ARTICULOS: Articulo[] = [
       "No todos los hostings son iguales. Tres puntos clave para no equivocarte al contratar.",
     categoria: "Hosting",
     fecha: "2026-07-18",
+    autor: "Equipo Soporte Digital",
     lectura: 4,
     bloques: [
       { tipo: "p", texto: "El hosting es donde vive tu sitio. Elegir mal puede hacerlo lento o caerse en el peor momento." },
@@ -86,6 +90,7 @@ export const ARTICULOS: Articulo[] = [
       "Lentitud rara, ventanas que no pediste, cuentas raras. Te decimos cómo detectar y reaccionar.",
     categoria: "Seguridad y cámaras",
     fecha: "2026-07-18",
+    autor: "Equipo Soporte Digital",
     lectura: 4,
     bloques: [
       { tipo: "p", texto: "Un virus no siempre apaga la PC. A menudo actúa en silencio y te lo advierte el comportamiento." },
@@ -109,6 +114,7 @@ export const ARTICULOS: Articulo[] = [
       "Antes de panicar, hay pasos que aumentan las chances de recuperar lo perdido. Te los contamos.",
     categoria: "Servicio técnico",
     fecha: "2026-07-18",
+    autor: "Equipo Soporte Digital",
     lectura: 3,
     bloques: [
       { tipo: "p", texto: "Lo primero: deja de usar el disco. Mientras más escribas, más pisás lo que querés recuperar." },
@@ -129,6 +135,7 @@ export const ARTICULOS: Articulo[] = [
       "Un correo @tunegocio.com.ar transmite confianza y profesionalismo. Te explicamos por qué.",
     categoria: "Hosting",
     fecha: "2026-07-18",
+    autor: "Equipo Soporte Digital",
     lectura: 3,
     bloques: [
       { tipo: "p", texto: "Escribir desde un correo personal a clientes resta seriedad. El correo con dominio cambia esa percepción." },

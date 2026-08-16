@@ -21,6 +21,12 @@ export default function ArticuloPage({ params }: { params: { slug: string } }) {
   const articulo = getArticulo(params.slug);
   if (!articulo) notFound();
 
+  // Fecha legible en español (AR) a partir de ISO YYYY-MM-DD.
+  const fechaStr = new Date(`${articulo.fecha}T00:00:00`).toLocaleDateString(
+    "es-AR",
+    { day: "numeric", month: "long", year: "numeric" }
+  );
+
   return (
     <>
       <Navbar />
@@ -30,6 +36,18 @@ export default function ArticuloPage({ params }: { params: { slug: string } }) {
           subtitle={articulo.extracto}
           eyebrow={`${articulo.categoria} · ${articulo.lectura} min de lectura`}
         />
+
+        {/* Metadatos del artículo (Fase 1.3): fecha + autor */}
+        <div className="border-b border-white/10">
+          <div className="container max-w-3xl mx-auto flex flex-wrap items-center gap-x-2 gap-y-1 text-small text-primary-300">
+            <span>
+              Publicado el{" "}
+              <time dateTime={articulo.fecha}>{fechaStr}</time>
+            </span>
+            <span aria-hidden>·</span>
+            <span>por {articulo.autor}</span>
+          </div>
+        </div>
 
         <article className="py-24">
           <div className="container max-w-3xl mx-auto">

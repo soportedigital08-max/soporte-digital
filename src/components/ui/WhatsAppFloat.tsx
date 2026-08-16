@@ -3,16 +3,23 @@
 import { CONTACTO } from "@/lib/servicios";
 
 // Botón de WhatsApp flotante, persistente en todo el scroll.
-// Pulso sutil no invasivo.
+// Pulso sutil no invasivo + mensaje predefinido (Fase 1.1).
+const MENSAJE_WA = "Hola, quiero consultar sobre un servicio de Soporte Digital.";
+
+// Codifica el texto para la URL de wa.me (?text=...)
+function waHref(telefono: string, mensaje: string) {
+  return `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`;
+}
+
 export default function WhatsAppFloat() {
-  const href = `https://wa.me/${CONTACTO.whatsapp}`;
+  const href = waHref(CONTACTO.whatsapp, MENSAJE_WA);
   return (
     <a
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      aria-label="WhatsApp: +54 9 2284 520392"
-      className="fixed bottom-5 right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-green-500 text-white shadow-premium transition-transform hover:scale-110"
+      aria-label="Escribinos por WhatsApp: +54 9 2284 520392"
+      className="fixed bottom-5 right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-green-500 text-white shadow-premium transition-transform hover:scale-110 focus:outline-none focus-visible:ring-2 focus-visible:ring-green-300"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
