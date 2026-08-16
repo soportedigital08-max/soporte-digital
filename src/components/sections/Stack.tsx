@@ -18,7 +18,7 @@ const STACK: { nombre: string; archivo: string }[] = [
 
 export default function Stack() {
   return (
-    <section className="relative overflow-hidden bg-ink-800">
+    <section className="relative overflow-hidden bg-ink-900">
       {/* Aurora radial de profundidad (Fase B — Patrón 4) */}
       <div className="pointer-events-none absolute -bottom-32 right-0 h-[360px] w-[640px] rounded-full bg-primary-500/12 blur-[120px]" />
       <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary-500/40 to-transparent" />

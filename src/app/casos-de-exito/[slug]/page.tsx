@@ -50,7 +50,8 @@ export default function CasoPage({ params }: { params: { slug: string } }) {
           </div>
         </section>
 
-        <section className="py-24 text-center bg-ink-800">
+        <section className="relative py-24 text-center">
+          <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary-500/30 to-transparent" />
           <div className="container">
             <h2 className="text-h2 text-white">¿Tu caso es parecido?</h2>
             <div className="mt-8">

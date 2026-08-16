@@ -43,7 +43,8 @@ export default function ServiciosPage() {
         </section>
 
         {/* Problemas (Nivel 3) */}
-        <section className="py-24 bg-ink-800">
+        <section className="relative py-24">
+          <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary-500/30 to-transparent" />
           <div className="container">
             <h2 className="text-h2 text-white text-center">
               Problemas frecuentes

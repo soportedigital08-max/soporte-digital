@@ -5,21 +5,20 @@ import Button from "@/components/ui/Button";
 // conectar con la sección previa en lugar de un bloque plano que "corta".
 export default function CTA() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-primary-800 via-primary-900 to-ink-900 pt-28 pb-24">
-      {/* Halo superior para continuidad con la sección anterior */}
-      <div className="pointer-events-none absolute inset-x-0 -top-24 h-48 bg-gradient-to-b from-primary-500/10 to-transparent" />
-      {/* Curva de unión (ya no borde recto cortante) */}
-      <div className="pointer-events-none absolute inset-x-0 -top-10 h-10 rounded-b-[2.5rem] bg-ink-900" />
-      {/* Grilla técnica sutil de fondo */}
-      <div
-        className="pointer-events-none absolute inset-0 opacity-[0.06]"
-        style={{
-          backgroundImage:
-            "linear-gradient(rgba(255,255,255,0.6) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.6) 1px, transparent 1px)",
-          backgroundSize: "40px 40px",
-        }}
-      />
-      <div className="container relative text-center">
+    <section className="relative max-w-7xl mx-auto px-6">
+      <div className="relative overflow-hidden rounded-[2rem] ring-1 ring-primary-500/20 bg-gradient-to-br from-primary-800/40 via-primary-900/20 to-ink-900/40 shadow-premium pt-28 pb-24">
+        {/* Halo superior para continuidad con la sección anterior */}
+        <div className="pointer-events-none absolute inset-x-0 top-0 h-48 bg-gradient-to-b from-primary-500/15 to-transparent" />
+        {/* Grilla técnica sutil de fondo */}
+        <div
+          className="pointer-events-none absolute inset-0 opacity-[0.06]"
+          style={{
+            backgroundImage:
+              "linear-gradient(rgba(255,255,255,0.6) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.6) 1px, transparent 1px)",
+            backgroundSize: "40px 40px",
+          }}
+        />
+        <div className="container relative text-center">
         <h2 className="text-h2 text-white">
           ¿Tenés un problema tecnológico?
         </h2>
@@ -39,6 +38,7 @@ export default function CTA() {
             Ver soluciones
           </Button>
         </div>
+      </div>
       </div>
     </section>
   );
