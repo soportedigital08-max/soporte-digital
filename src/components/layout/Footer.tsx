@@ -23,7 +23,10 @@ const CONTACTO = {
 
 export default function Footer() {
   return (
-    <footer className="bg-ink-900 text-primary-100">
+    <footer className="relative overflow-hidden bg-gradient-to-b from-ink-900 to-black">
+      {/* Glow superior para continuidad con la sección anterior (evita el "corte") */}
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary-500/40 to-transparent" />
+      <div className="pointer-events-none absolute inset-x-0 -top-24 h-48 bg-gradient-to-b from-primary-500/10 to-transparent" />
       <div className="container py-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
         {/* Marca */}
         <div>

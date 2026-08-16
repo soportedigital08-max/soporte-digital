@@ -69,8 +69,11 @@ const DIFERENCIALES: Diferencial[] = [
 
 export default function Confianza() {
   return (
-    <section className="py-24 bg-ink-900">
-      <div className="container">
+    <section className="relative overflow-hidden bg-ink-900">
+      {/* Aurora radial de profundidad (Fase B — Patrón 4 del informe premium) */}
+      <div className="pointer-events-none absolute -top-32 left-1/2 -translate-x-1/2 h-[420px] w-[820px] rounded-full bg-primary-600/15 blur-[120px]" />
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary-500/40 to-transparent" />
+      <div className="container relative">
         <h2 className="text-h2 text-white text-center">
           Por qué confiar en nosotros
         </h2>

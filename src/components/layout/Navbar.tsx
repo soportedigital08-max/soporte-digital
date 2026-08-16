@@ -55,9 +55,9 @@ export default function Navbar() {
           </Button>
         </div>
 
-        {/* Badge de disponibilidad en tiempo real (Fase 1.2) — escritorio */}
+        {/* Badge de disponibilidad en tiempo real (Fase 1.2) — escritorio, compacto */}
         <div className="hidden md:flex">
-          <DisponibilidadBadge />
+          <DisponibilidadBadge variant="compact" />
         </div>
 
         {/* Botón hamburguesa móvil */}
@@ -95,9 +95,9 @@ export default function Navbar() {
       {open && (
         <nav className="md:hidden border-t border-gray-100 bg-white">
           <div className="container flex flex-col py-2">
-            {/* Badge de disponibilidad (Fase 1.2) — móvil */}
+            {/* Badge de disponibilidad (Fase 1.2) — móvil, compacto */}
             <div className="pb-3 mb-1 border-b border-gray-50">
-              <DisponibilidadBadge className="!border-primary-200 !bg-primary-50 !text-primary-800" />
+              <DisponibilidadBadge variant="compact" />
             </div>
             {NAV_ITEMS.map((item) => (
               <Link

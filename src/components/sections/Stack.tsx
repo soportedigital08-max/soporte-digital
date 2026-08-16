@@ -18,8 +18,11 @@ const STACK: { nombre: string; archivo: string }[] = [
 
 export default function Stack() {
   return (
-    <section className="py-20 bg-ink-800">
-      <div className="container text-center">
+    <section className="relative overflow-hidden bg-ink-800">
+      {/* Aurora radial de profundidad (Fase B — Patrón 4) */}
+      <div className="pointer-events-none absolute -bottom-32 right-0 h-[360px] w-[640px] rounded-full bg-primary-500/12 blur-[120px]" />
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary-500/40 to-transparent" />
+      <div className="container relative text-center">
         <h2 className="text-h2 text-white">Tecnología que dominamos</h2>
         <p className="text-body-lg text-primary-200 mt-3 max-w-2xl mx-auto">
           Trabajamos con lo que tu equipo y tu negocio ya usan. Sin humo.

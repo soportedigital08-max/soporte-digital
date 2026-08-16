@@ -77,7 +77,10 @@ function AdminMockup() {
 
 export default function DesarrolloMedida() {
   return (
-    <section className="py-24 bg-ink-900">
+    <section className="relative overflow-hidden bg-ink-900">
+      {/* Glow violeta de la sección "a medida" (Fase B — Patrón 6: panel, no franja) */}
+      <div className="pointer-events-none absolute -top-32 right-0 h-[460px] w-[760px] rounded-full bg-violet-600/15 blur-[130px]" />
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-violet-500/40 to-transparent" />
       {/* franja de acento violeta */}
       <div className="container max-w-5xl mx-auto">
         <div className="grid md:grid-cols-2 gap-10 items-center">

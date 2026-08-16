@@ -1,6 +1,8 @@
 import Counter from "@/components/ui/Counter";
 
 // Sección de estadísticas de confianza — counter-up al entrar en viewport.
+// Mejora premium (Fase B): gradiente sutil que conecta con el ink-900 de las
+// secciones vecinas en lugar de un gris plano que "corta".
 type Stat = {
   valor: number;
   prefix?: string;
@@ -18,7 +20,9 @@ const STATS: Stat[] = [
 
 export default function Stats() {
   return (
-    <section className="py-16 bg-ink-800 text-white">
+    <section className="relative overflow-hidden bg-gradient-to-b from-ink-900 via-ink-800 to-ink-900 py-20">
+      {/* Línea de glow superior para continuidad */}
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary-500/40 to-transparent" />
       <div className="container grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
         {STATS.map((s) => (
           <div key={s.label}>
