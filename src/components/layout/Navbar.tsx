@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import Button from "@/components/ui/Button";
-import DisponibilidadBadge from "@/components/ui/DisponibilidadBadge";
 import { useState } from "react";
 
 // Navegación principal — 03-ARQUITECTURA.md 8. NAVEGACIÓN
@@ -37,7 +36,7 @@ export default function Navbar() {
         </Link>
 
         {/* Menú escritorio */}
-        <nav className="hidden md:flex items-center gap-7">
+        <nav className="hidden md:flex items-center gap-8">
           {NAV_ITEMS.map((item) => (
             <Link
               key={item.href}
@@ -49,15 +48,10 @@ export default function Navbar() {
           ))}
         </nav>
 
-        <div className="hidden md:block">
+        <div className="hidden md:block md:ml-8">
           <Button href="/contacto" variant="primary">
             Solicitar soporte
           </Button>
-        </div>
-
-        {/* Badge de disponibilidad en tiempo real (Fase 1.2) — escritorio, compacto */}
-        <div className="hidden md:flex">
-          <DisponibilidadBadge variant="compact" />
         </div>
 
         {/* Botón hamburguesa móvil */}
@@ -95,10 +89,6 @@ export default function Navbar() {
       {open && (
         <nav className="md:hidden border-t border-gray-100 bg-white">
           <div className="container flex flex-col py-2">
-            {/* Badge de disponibilidad (Fase 1.2) — móvil, compacto */}
-            <div className="pb-3 mb-1 border-b border-gray-50">
-              <DisponibilidadBadge variant="compact" />
-            </div>
             {NAV_ITEMS.map((item) => (
               <Link
                 key={item.href}

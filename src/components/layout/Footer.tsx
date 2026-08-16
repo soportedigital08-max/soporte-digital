@@ -1,4 +1,5 @@
 import Link from "next/link";
+import DisponibilidadBadge from "@/components/ui/DisponibilidadBadge";
 
 // Reutiliza los mismos items de navegación principal como navegación secundaria
 // (03-ARQUITECTURA.md 8. NAVEGACIÓN)
@@ -87,7 +88,12 @@ export default function Footer() {
         {/* Horario y cobertura */}
         <div className="flex flex-col gap-2 text-body text-primary-100">
           <span className="font-medium text-white">Horario</span>
-          <span className="text-small text-primary-200">{CONTACTO.horario}</span>
+          <div className="mt-1">
+            <DisponibilidadBadge variant="full" />
+          </div>
+          <span className="text-small text-primary-200 mt-1">
+            {CONTACTO.horario}
+          </span>
           <span className="text-small text-primary-200 mt-1">
             {CONTACTO.horarioNota}
           </span>

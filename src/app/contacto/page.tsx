@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import FormularioContacto from "@/components/sections/FormularioContacto";
+import DisponibilidadBadge from "@/components/ui/DisponibilidadBadge";
 import { CONTACTO } from "@/lib/servicios";
 
 export const metadata: Metadata = {
@@ -24,6 +25,10 @@ export default function ContactoPage() {
                 Contanos qué pasa. Te respondemos con claridad y sin
                 vueltas.
               </p>
+
+              <div className="mt-6">
+                <DisponibilidadBadge variant="full" />
+              </div>
 
               <div className="mt-12 flex flex-col gap-4">
                 <a
