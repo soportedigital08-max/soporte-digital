@@ -67,6 +67,22 @@ ul.lista-x li::before{content:"•";color:var(--cian)}
 .footer a{color:var(--cian);text-decoration:none}
 .btn-demo{display:inline-block;background:linear-gradient(135deg,var(--cian),var(--azul));color:#06222b;font-weight:800;padding:13px 26px;border-radius:12px;text-decoration:none;margin-top:16px}
 .aviso{font-size:12.5px;color:var(--mut);margin-top:16px;padding:12px 16px;background:var(--panel2);border-radius:12px;border-left:3px solid var(--cian)}
+/* opciones tienda */
+.tienda-opt{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:14px}
+@media(max-width:700px){.tienda-opt{grid-template-columns:1fr}}
+.opt{background:var(--panel);border:1px solid var(--linea);border-radius:16px;padding:22px;display:flex;flex-direction:column}
+.opt.rec{border-color:rgba(34,211,238,.55);background:linear-gradient(135deg,rgba(34,211,238,.06),rgba(14,116,144,.06))}
+.opt .badge{font-size:11px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;color:var(--mut)}
+.opt.rec .badge{color:var(--cian)}
+.opt h3{font-size:20px;font-weight:900;margin:4px 0 2px}
+.opt .desc{font-size:13px;color:var(--mut);margin-bottom:12px}
+.opt .inv{font-size:26px;font-weight:900;color:var(--cian);margin:6px 0 14px}
+.opt ul{list-style:none;font-size:13.5px;flex:1}
+.opt ul li{padding:5px 0 5px 24px;position:relative;border-bottom:1px dashed var(--linea)}
+.opt ul li:last-child{border:0}
+.opt ul li::before{content:"✓";position:absolute;left:2px;color:var(--verde);font-weight:900}
+.opt .cta{margin-top:16px;text-align:center;font-size:13px;color:var(--mut)}
+.precio-box.tienda{margin-top:24px}
 </style>
 </head>
 <body>
@@ -84,7 +100,7 @@ ul.lista-x li::before{content:"•";color:var(--cian)}
     <img src="logo.jpg" alt="Sportia">
     <div>
       <h1>Sistema de Gestión Sportia</h1>
-      <div class="sub">Plataforma a medida para costos, caja diaria, pedidos, clientes y estadísticas</div>
+      <div class="sub">Plataforma a medida para costos, caja diaria, pedidos, clientes, estadísticas — y venta online integrada.</div>
       <span class="chip">Propuesta exclusiva · Cliente de confianza</span>
     </div>
   </div>
@@ -103,10 +119,11 @@ ul.lista-x li::before{content:"•";color:var(--cian)}
       <li><b>Exportación a Excel:</b> cualquier dato se descarga a Excel con un botón, en el formato de siempre.</li>
       <li><b>Uso desde el celular:</b> versión online accesible desde computadora, tablet y celular, en el negocio o donde estén.</li>
       <li><b>Copias de seguridad automáticas</b> en servidores de Soporte Digital.</li>
+      <li><b>Módulo de ventas online (nuevo):</b> catálogo, carrito, pagos online y pedidos web integrados al mismo sistema. Ver opciones más abajo.</li>
     </ul>
   </div>
 
-  <h2>Inversión</h2>
+  <h2>Inversión — Sistema de Gestión (base)</h2>
   <div class="precio-box">
     <div class="lista">Valor de lista del desarrollo: <s>$ 1.000.000</s></div>
     <div class="final">$ 800.000</div>
@@ -114,16 +131,38 @@ ul.lista-x li::before{content:"•";color:var(--cian)}
     <div class="nota">Bonificación de $ 200.000 por cliente de confianza + financiación exclusiva sin interés.<br>Primera cuota al confirmar el proyecto. Cuotas fijas: no se ajustan durante los 12 meses.</div>
   </div>
 
-  <div class="grid2">
-    <div class="mini">
-      <div class="t">Servicio mensual · Hosting</div>
-      <div class="v">$ 45.000 <span style="font-size:13px;color:var(--mut)">/mes</span></div>
-      <div class="d">Alojamiento del sistema en servidor propio de Soporte Digital, con copias de seguridad. Se abona por separado de las cuotas.</div>
+  <h2>Módulo de Ventas Online</h2>
+  <div class="card" style="font-size:14.5px">
+    <p>En base al sistema actual, se incorpora un <b style="color:var(--cian)">módulo de venta online</b> completamente integrado a la plataforma existente. Permite centralizar las ventas digitales dentro del mismo sistema, manteniendo coherencia con los costos, precios y la operación diaria del negocio. La tienda queda pensada no solo como canal de venta, sino como extensión directa del funcionamiento interno.</p>
+  </div>
+
+  <div class="tienda-opt">
+    <div class="opt">
+      <div class="badge">Opción A</div>
+      <h3>🛒 Tienda Inicial</h3>
+      <div class="desc">Implementación rápida y funcional.</div>
+      <div class="inv">$ 700.000</div>
+      <ul>
+        <li>Hasta 15 productos cargados</li>
+        <li>Carrito de compra</li>
+        <li>Integración con pagos online</li>
+        <li>Panel básico de gestión</li>
+      </ul>
+      <div class="cta">Pensada para arrancar a vender online ya.</div>
     </div>
-    <div class="mini">
-      <div class="t">Servicio anual · Dominio</div>
-      <div class="v">$ 35.000 <span style="font-size:13px;color:var(--mut)">/año</span></div>
-      <div class="d">Registro y gestión del dominio propio del sistema. Un solo pago por año.</div>
+    <div class="opt rec">
+      <div class="badge">⭐ Recomendada</div>
+      <h3>🚀 Tienda Pro</h3>
+      <div class="desc">Crecimiento y escalabilidad para el negocio.</div>
+      <div class="inv">$ 1.100.000</div>
+      <ul>
+        <li>Productos ilimitados</li>
+        <li>Gestión de stock</li>
+        <li>Integración con el sistema de costos</li>
+        <li>Panel de administración completo</li>
+        <li>Estructura preparada para expansión futura</li>
+      </ul>
+      <div class="cta">La base ideal para crecer sin límites.</div>
     </div>
   </div>
 
@@ -131,15 +170,18 @@ ul.lista-x li::before{content:"•";color:var(--cian)}
     <table>
       <thead><tr><th>Concepto</th><th>Frecuencia</th><th style="text-align:right">Importe</th></tr></thead>
       <tbody>
-        <tr><td>Desarrollo del sistema (12 cuotas sin interés)</td><td>Mensual · 12 meses</td><td class="r big">$ 66.700</td></tr>
-        <tr><td>Hosting (alojamiento + backups)</td><td>Mensual · permanente</td><td class="r">$ 45.000</td></tr>
+        <tr><td>Desarrollo del sistema base (12 cuotas sin interés)</td><td>Mensual · 12 meses</td><td class="r big">$ 66.700</td></tr>
+        <tr><td>Módulo Tienda Inicial (12 cuotas sin interés)</td><td>Mensual · 12 meses</td><td class="r big">$ 58.300</td></tr>
+        <tr><td>Módulo Tienda Pro (12 cuotas sin interés)</td><td>Mensual · 12 meses</td><td class="r big">$ 91.700</td></tr>
+        <tr><td>Hosting actualizado (alojamiento + backups)</td><td>Mensual · permanente</td><td class="r">$ 75.000</td></tr>
         <tr><td>Dominio</td><td>Anual</td><td class="r">$ 35.000</td></tr>
-        <tr><td><b>Total mensual durante el primer año</b><br><small style="color:var(--mut)">(cuota sistema + hosting)</small></td><td></td><td class="r big">$ 111.700</td></tr>
-        <tr><td><b>Desde el mes 13</b><br><small style="color:var(--mut)">(solo hosting; el sistema ya es de ustedes)</small></td><td>Mensual</td><td class="r ok">$ 45.000</td></tr>
+        <tr><td><b>Total mensual año 1 — opción A</b><br><small style="color:var(--mut)">(base + tienda inicial + hosting)</small></td><td></td><td class="r big">$ 200.000</td></tr>
+        <tr><td><b>Total mensual año 1 — opción B</b><br><small style="color:var(--mut)">(base + tienda pro + hosting)</small></td><td></td><td class="r big">$ 233.400</td></tr>
+        <tr><td><b>Desde el mes 13</b><br><small style="color:var(--mut)">(solo hosting; sistemas ya son de ustedes)</small></td><td>Mensual</td><td class="r ok">$ 75.000</td></tr>
       </tbody>
     </table>
   </div>
-  <div class="aviso">Las 12 cuotas del desarrollo son <b>fijas y sin interés</b> (ese es el beneficio). El hosting es un servicio aparte y puede actualizarse semestralmente según costos de infraestructura.</div>
+  <div class="aviso">Las cuotas del desarrollo son <b>fijas y sin interés</b>. El hosting se actualiza a <b>$ 75.000/mes</b> por la mayor capacidad operativa, estabilidad, seguridad en transacciones y soporte de crecimiento que requiere el módulo de ventas online. Ambos módulos (base y tienda) pueden financiarse en 12 cuotas sin interés por separado.</div>
 
   <h2>Soporte, adaptación y actualizaciones — reglas claras</h2>
   <div class="dos-col">
@@ -171,7 +213,7 @@ ul.lista-x li::before{content:"•";color:var(--cian)}
 
   <h2>Preparado para crecer</h2>
   <div class="card">
-    <p style="font-size:14.5px">La plataforma queda preparada para integrar a futuro una <b style="color:var(--cian)">tienda online</b> conectada al mismo sistema: mismos artículos, precios y stock, ventas con Mercado Pago que entran directo a la caja. No es necesario decidirlo ahora — la base ya queda lista. Se cotiza como módulo aparte cuando lo deseen.</p>
+    <p style="font-size:14.5px">La plataforma queda preparada para integrar a futuro nuevas funcionalidades sobre el módulo online (más productos, automatizaciones, mejoras). Todo se construye sobre una única base de gestión: mismos artículos, precios y stock, ventas que entran directo a la caja. Nuevas ampliaciones se cotizan por separado cuando lo deseen.</p>
     <a class="btn-demo" href="index.html">▶ Ver demostración interactiva del sistema</a>
   </div>
 
